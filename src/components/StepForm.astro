@@ -41,8 +41,8 @@ if (Astro.request.method === "POST") {
         
 
         <form id="choice_form" class="shadow-lg bg-white lg:p-24 p-10 rounded-xl relative" action="/api/talentRegister" method="post"> 
-                <Image src={alveoles} alt="picto choice" class="scale-x-[-1] js-background absolute top-0 left-0" />
-                <Image src={arrow} alt="picto choice" class="absolute bottom-0 right-4 js-arrow" />
+                <Image src={alveoles} alt="picto choice" class="scale-x-[-1] js-background absolute top-0 left-0 hidden lg:block" />
+                <Image src={arrow} alt="picto choice" class="absolute bottom-0 right-4 js-arrow hidden lg:block" />
 
                 <div id="step_choice" class="js-step active-step relative justify-center items-center lg:h-[380px]">
 
@@ -50,8 +50,8 @@ if (Astro.request.method === "POST") {
                         <h1 class="gap-4 font-finalSixMedium text-center mb-12 text-2xl">Je suis ... </h1>
 
                         <div class="lg:flex lg:gap-5 lg:space-y-0 space-y-5">
-                            <button class=" js-btn-talent-form rounded-lg w-full lg:w-1/2 px-14 py-7 font-finalSixBlack text-white text-lg bg-green text-center border-solid border-[2px] border-green hover:bg-white hover:text-green transition-all"> À la recherche d'un métier vert </button>
-                            <button class=" js-btn-company-form rounded-lg w-full lg:w-1/2 px-14 py-7 font-finalSixBlack text-white text-lg bg-green text-center border-solid border-[2px] border-green hover:bg-white hover:text-green transition-all"> Une entreprise </button>
+                            <button class=" js-btn-talent-form rounded-lg w-full lg:w-1/2 lg:px-14 lg:py-7 px-8 py-4 font-finalSixBlack text-white lg:text-lg bg-green text-center border-solid border-[2px] border-green hover:bg-white hover:text-green transition-all"> À la recherche d'un métier vert </button>
+                            <button class=" js-btn-company-form rounded-lg w-full lg:w-1/2 lg:px-14 lg:py-7 px-8 py-4 font-finalSixBlack text-white lg:text-lg bg-green text-center border-solid border-[2px] border-green hover:bg-white hover:text-green transition-all"> Une entreprise </button>
                         </div>
                     </div>
 
@@ -93,8 +93,8 @@ if (Astro.request.method === "POST") {
                         <div class="lg:flex lg:justify-between lg:items-center mt-7 lg:mt-0">
                             <p class="text-[#9E9E9E] font-finalSixMedium">Champs obligatoires(*)</p>
                             <div class="flex flex-col lg:flex-row lg:gap-2 gap-4">
-                                <button class="js-btn-back-choice lg:mt-7 font-finalSixMedium border-green border-solid border-[2px] text-green bg-white  rounded-lg py-3 px-8">Retour</button>
-                                <button class="js-next-btn mt-7 font-finalSixMedium bg-green text-white rounded-lg py-3 px-8">Continuer</button>
+                                <button class="js-btn-back-choice lg:mt-7 font-finalSixMedium border-green border-solid border-[2px] text-green bg-white  rounded-lg py-3 px-8 mt-4">Retour</button>
+                                <button class="js-next-btn lg:mt-7 font-finalSixMedium bg-green text-white rounded-lg py-3 px-8">Continuer</button>
                             </div>
                         </div>
                     </div>
@@ -143,8 +143,8 @@ if (Astro.request.method === "POST") {
                         <div class="lg:flex lg:justify-between lg:items-center mt-7 lg:mt-0">
                             <p class="text-[#9E9E9E] font-finalSixMedium">Champs obligatoires(*)</p>
                             <div class="flex flex-col lg:flex-row lg:gap-2 gap-4">
-                                <button class="js-btn-back-choice lg:mt-7 font-finalSixMedium border-green border-solid border-[2px] text-green bg-white  rounded-lg py-3 px-8">Retour</button>
-                                <button class="js-next-btn-company mt-7 font-finalSixMedium bg-green text-white rounded-lg py-3 px-8">Continuer</button>
+                                <button class="js-btn-back-choice lg:mt-7 font-finalSixMedium border-green border-solid border-[2px] text-green bg-white  rounded-lg py-3 px-8 mt-4">Retour</button>
+                                <button class="js-next-btn-company lg:mt-7 font-finalSixMedium bg-green text-white rounded-lg py-3 px-8">Continuer</button>
                             </div>
                         </div>
                     </div>
@@ -275,10 +275,10 @@ if (Astro.request.method === "POST") {
 
     btnContinue?.addEventListener("click" , (e) => {
         e.preventDefault();
-        backgroundImage?.classList.add('hidden');
-        backgroundImage?.classList.remove('block');
-        arrow?.classList.add('hidden');
-        arrow?.classList.remove('block');
+        backgroundImage?.classList.add('lg:hidden');
+        backgroundImage?.classList.remove('lg:block');
+        arrow?.classList.add('lg:hidden');
+        arrow?.classList.remove('lg:block');
         let step_two = document.querySelector('#step_two');
         step_two?.classList.remove('hidden');
         step_two?.classList.add('active-step');
@@ -292,10 +292,10 @@ if (Astro.request.method === "POST") {
 
     btnContinueCompany?.addEventListener("click" , (e) => {
         e.preventDefault();
-        backgroundImage?.classList.add('hidden');
-        backgroundImage?.classList.remove('block');
-        arrow?.classList.add('hidden');
-        arrow?.classList.remove('block');
+        backgroundImage?.classList.add('lg:hidden');
+        backgroundImage?.classList.remove('lg:block');
+        arrow?.classList.add('lg:hidden');
+        arrow?.classList.remove('lg:block');
         let step_two = document.querySelector('#step_two_company');
         step_two?.classList.remove('hidden');
         step_two?.classList.add('active-step');
@@ -310,10 +310,10 @@ if (Astro.request.method === "POST") {
     backToChoice.forEach((item) => {
         item?.addEventListener("click" , (e) => {
         e.preventDefault();
-        backgroundImage?.classList.add('block');
-        backgroundImage?.classList.remove('hidden');
-        arrow?.classList.add('block');
-        arrow?.classList.remove('hidden');
+        backgroundImage?.classList.add('lg:hidden');
+        backgroundImage?.classList.remove('lg:block');
+        arrow?.classList.add('lg:hidden');
+        arrow?.classList.remove('lg:block');
         let step_choice = document.querySelector('#step_choice');
         step_choice?.classList.remove('hidden');
         step_choice?.classList.add('active-step');
@@ -329,10 +329,10 @@ if (Astro.request.method === "POST") {
 
     backBtn?.addEventListener("click" , (e) => {
         e.preventDefault();
-        backgroundImage?.classList.add('hidden');
-        backgroundImage?.classList.remove('block');
-        arrow?.classList.add('hidden');
-        arrow?.classList.remove('block');
+        backgroundImage?.classList.add('lg:hidden');
+        backgroundImage?.classList.remove('lg:block');
+        arrow?.classList.add('lg:hidden');
+        arrow?.classList.remove('lg:block');
         let step_one = document.querySelector('#step_one');
         step_one?.classList.remove('hidden');
         step_one?.classList.add('active-step');
@@ -346,10 +346,10 @@ if (Astro.request.method === "POST") {
 
     backBtnCompany?.addEventListener("click" , (e) => {
         e.preventDefault();
-        backgroundImage?.classList.add('hidden');
-        backgroundImage?.classList.remove('block');
-        arrow?.classList.add('hidden');
-        arrow?.classList.remove('block');
+        backgroundImage?.classList.add('lg:hidden');
+        backgroundImage?.classList.remove('lg:block');
+        arrow?.classList.add('lg:hidden');
+        arrow?.classList.remove('lg:block');
         let step_one = document.querySelector('#step_one_company');
         step_one?.classList.remove('hidden');
         step_one?.classList.add('active-step');
@@ -365,10 +365,10 @@ if (Astro.request.method === "POST") {
         //@ts-ignore
         document.querySelector('#choice_form').action = '/api/talentRegister';
         e.preventDefault();
-        backgroundImage?.classList.add('hidden');
-        backgroundImage?.classList.remove('block');
-        arrow?.classList.add('hidden');
-        arrow?.classList.remove('block');
+        backgroundImage?.classList.add('lg:hidden');
+        backgroundImage?.classList.remove('lg:block');
+        arrow?.classList.add('lg:hidden');
+        arrow?.classList.remove('lg:block');
         let step_one = document.querySelector('#step_one');
         step_one?.classList.remove('hidden');
         step_one?.classList.add('active-step');
@@ -384,10 +384,10 @@ if (Astro.request.method === "POST") {
          //@ts-ignore
         document.querySelector('#choice_form').action = '/api/companyRegister';
         e.preventDefault();
-        backgroundImage?.classList.add('hidden');
-        backgroundImage?.classList.remove('block');
-        arrow?.classList.add('hidden');
-        arrow?.classList.remove('block');
+        backgroundImage?.classList.add('lg:hidden');
+        backgroundImage?.classList.remove('lg:block');
+        arrow?.classList.add('lg:hidden');
+        arrow?.classList.remove('lg:block');
         let step_one = document.querySelector('#step_one_company');
         step_one?.classList.remove('hidden');
         step_one?.classList.add('active-step');
