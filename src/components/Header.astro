@@ -17,6 +17,6 @@ const { href, title, description, textCta } = Astro.props;
     <div class="container flex flex-col gap-4 lg:gap-6">
         <h1 class="font-finalSixHeavy example__slideAndRotate__text text-white text-4xl">{title}</h1>
         <p class=" font-finalSixMedium text-white text-xl lg:w-3/5">{description}</p>
-        <a class="text-black font-finalSixBold bg-grey py-4 px-8 block w-fit rounded text-xl shadow-inner" href={href}> {textCta} </a>
+        <a class="text-black font-finalSixBold bg-grey py-4 px-8 block w-fit rounded text-xl shadow-inner hover:bg-black hover:text-white transition-all" href={href}> {textCta} </a>
     </div>
 </section>

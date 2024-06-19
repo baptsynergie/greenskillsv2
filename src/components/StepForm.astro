@@ -31,11 +31,11 @@ if (Astro.request.method === "POST") {
                 <h2 class="text-white text-3xl font-finalSixBlack">Contactez-nous</h2>
             </div>
             <div class="flex items-center">
-                <button  class='border-white border-solid border-[2px] w-[30px] h-[30px] rounded-full cursor-pointer step-circle step-circle-1 active'></button>
+                <button  class='border-white border-solid border-[2px] w-[30px] h-[30px] rounded-full cursor-default cur step-circle step-circle-1 active'></button>
                 <div class="bg-white w-[60px] h-[2px]"></div>
-                <button class="border-white border-solid border-[2px] w-[30px] h-[30px] rounded-full cursor-pointer step-circle step-circle-2"></button>
+                <button class="border-white border-solid border-[2px] w-[30px] h-[30px] rounded-full cursor-default cur step-circle step-circle-2"></button>
                 <div class="bg-white w-[60px] h-[2px]"></div>
-                <button class="border-white border-solid border-[2px] w-[30px] h-[30px] rounded-full cursor-pointer step-circle step-circle-3"></button>
+                <button class="border-white border-solid border-[2px] w-[30px] h-[30px] rounded-full cursor-default cur step-circle step-circle-3"></button>
             </div>
         </div>
         
@@ -323,10 +323,10 @@ if (Astro.request.method === "POST") {
     backToChoice.forEach((item) => {
         item?.addEventListener("click" , (e) => {
         e.preventDefault();
-        backgroundImage?.classList.add('lg:hidden');
-        backgroundImage?.classList.remove('lg:block');
-        arrow?.classList.add('lg:hidden');
-        arrow?.classList.remove('lg:block');
+        backgroundImage?.classList.add('lg:block');
+        backgroundImage?.classList.remove('lg:hidden');
+        arrow?.classList.add('lg:block');
+        arrow?.classList.remove('lg:hidden');
         let step_choice = document.querySelector('#step_choice');
         step_choice?.classList.remove('hidden');
         step_choice?.classList.add('active-step');

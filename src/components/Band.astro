@@ -9,12 +9,6 @@ interface Props {
 
 const { pdf, title, btnText, bgImage } = Astro.props;
 
-console.log(pdf)
-
-// TODO essayer de rendre dynamique
-
-// const classBg = 'bg-[url(' + bgImage.src + ')] ';
-
 ---
 
 <section id="band" class="bg-[url('../images/band/band.png')] h-[350px] bg-cover bg-center bg-no-repeat">
@@ -23,13 +17,11 @@ console.log(pdf)
         <a data-aos="zoom-in" class="container js-dl text-black font-finalSixBold bg-grey py-4 px-8 block w-fit rounded text-xl shadow-inner" href={pdf}> {btnText} </a>
     </div>
     <div id="modale" class="flex transition-all invisible opacity-0 justify-center items-center fixed top-0 modale h-[100vh] w-full z-30 bg-black/30">
-        <div class="relative font-finalSixMedium lg:h-[380px] container rounded-xl lg:p-24 p-10 flex-col lg:flex-row flex items-center justify-center p-30 bg-white shadow-lg">
+        <div class="relative font-finalSixMedium lg:h-[380px] container rounded-xl lg:p-24 p-10 flex-col lg:flex-row flex items-center justify-center p-30 bg-white shadow-lg mx-[var(--h-padding)]">
             <svg id="cross" class=" self-end cursor-pointer lg:absolute lg:top-5 lg:right-5" width="50px" height="50px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#00bf63"><path d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426" stroke="#00bf63" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 
             <div class="flex flex-col gap-4">
-                <p>Pour télécharger notre plaquette PDF, veuillez remplir le champ email.
-                    Nous avons besoin de votre adresse email pour procéder au téléchargement.
-                    Une fois l'email renseigné, le téléchargement commencera automatiquement.
+                <p>Pour télécharger notre plaquette PDF, veuillez renseigner votre adresse email dans le champ ci-dessous :
                 </p>
                 <div class="text-green text-lg uppercase font-finalSixBlack ">Télécharger la plaquette : </div>
                 <div class="lg:flex items-center mb-4 space-y-2 lg:space-y-0">
@@ -78,7 +70,7 @@ console.log(pdf)
     modale?.classList.add('invisible' , 'opacity-0');
    })
 
-   const pdf = '/public/pdf/greenskills.pdf';
+   const pdf = '/pdf/greenskills.pdf';
    const form = document.querySelector('#form_plaquette');
    const emailPdf = document.querySelector('#email_pdf');
 
