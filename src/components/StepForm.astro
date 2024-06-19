@@ -31,11 +31,11 @@ if (Astro.request.method === "POST") {
                 <h2 class="text-white text-3xl font-finalSixBlack">Contactez-nous</h2>
             </div>
             <div class="flex items-center">
-                <button  class='border-white border-solid border-[2px] w-[30px] h-[30px] rounded-full cursor-pointer step-circle active'></button>
+                <button  class='border-white border-solid border-[2px] w-[30px] h-[30px] rounded-full cursor-pointer step-circle step-circle-1 active'></button>
                 <div class="bg-white w-[60px] h-[2px]"></div>
-                <button class="border-white border-solid border-[2px] w-[30px] h-[30px] rounded-full cursor-pointer step-circle"></button>
+                <button class="border-white border-solid border-[2px] w-[30px] h-[30px] rounded-full cursor-pointer step-circle step-circle-2"></button>
                 <div class="bg-white w-[60px] h-[2px]"></div>
-                <button class="border-white border-solid border-[2px] w-[30px] h-[30px] rounded-full cursor-pointer step-circle"></button>
+                <button class="border-white border-solid border-[2px] w-[30px] h-[30px] rounded-full cursor-pointer step-circle step-circle-3"></button>
             </div>
         </div>
         
@@ -64,30 +64,30 @@ if (Astro.request.method === "POST") {
                         <div class="lg:flex lg:items-center lg:gap-5 mb-7">
                             <div class="lg:w-1/2 mb-7 lg:mb-0">
                                 <label class="hidden" for="lastname">Nom :</label>
-                                <input placeholder="Nom*" type="text" name="lastname" class="bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                                <input placeholder="Nom*" type="text" name="lastname" class="input-talent bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
                             </div>
                 
                             <div class="lg:w-1/2 mb-7 lg:mb-0">
                                 <label class="hidden" for="firstname">Prénom :</label>
-                                <input placeholder="Prénom*"type="text" name="firstname" class="bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                                <input placeholder="Prénom*"type="text" name="firstname" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
                             </div>
                         </div>
 
                         <div class="lg:flex lg:items-center lg:gap-5 mb-7">
                             <div class="lg:w-1/2 mb-7 lg:mb-0">
                                 <label class="hidden" for="email">Email :</label>
-                                <input placeholder="Email*" type="email" name="email" class="bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                                <input placeholder="Email*" type="email" name="email" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
                             </div>
                 
                             <div class="lg:w-1/2 mb-7 lg:mb-0">
                                 <label class="hidden" for="phone">Téléphone :</label>
-                                <input placeholder="Téléphone*" type="tel" name="phone" class="bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                                <input placeholder="Téléphone*" type="tel" name="phone" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
                             </div>
                         </div>
 
                         <div class="lg:w-1/2">
                             <label class="hidden" for="city">Ville :</label>
-                            <input placeholder="Ville*" type="text" name="city" class="bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                            <input placeholder="Ville*" type="text" name="city" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
                         </div>
                         
                         <div class="lg:flex lg:justify-between lg:items-center mt-7 lg:mt-0">
@@ -107,36 +107,36 @@ if (Astro.request.method === "POST") {
                         <div class="lg:flex lg:items-center lg:gap-5 mb-7">
                             <div class="lg:w-1/2 mb-7 lg:mb-0">
                                 <label class="hidden" for="companyName">Nom de la structure :</label>
-                                <input placeholder="Nom de la structure*" type="text" name="companyName" class="bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                                <input placeholder="Nom de la structure*" type="text" name="companyName" class="bg-[#F3F3F3] input-company text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
                             </div>
                 
                             <div class="lg:w-1/2 mb-7 lg:mb-0">
                                 <label class="hidden" for="zipCode">Code Postal :</label>
-                                <input placeholder="Code Postal*"type="text" name="zipCode" class="bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                                <input placeholder="Code Postal*"type="text" name="zipCode" class="bg-[#F3F3F3] text-[#9E9E9E] input-company font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
                             </div>
                         </div>
 
                         <div class="lg:flex lg:items-center lg:gap-5 mb-7">
                             <div class="lg:w-1/2 mb-7 lg:mb-0">
                                 <label class="hidden" for="lastnameCompany">Nom :</label>
-                                <input placeholder="Nom*" type="text" name="lastnameCompany" class="bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                                <input placeholder="Nom*" type="text" name="lastnameCompany" class="bg-[#F3F3F3] text-[#9E9E9E] input-company font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
                             </div>
                 
                             <div class="lg:w-1/2 mb-7 lg:mb-0">
                                 <label class="hidden" for="firstnameCompany">Prénom :</label>
-                                <input placeholder="Prénom*" type="text" name="firstnameCompany" class="bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                                <input placeholder="Prénom*" type="text" name="firstnameCompany" class="bg-[#F3F3F3] text-[#9E9E9E] input-company font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
                             </div>
                         </div>
 
                         <div class="lg:flex lg:items-center lg:gap-5 mb-7">
                             <div class="lg:w-1/2 mb-7 lg:mb-0">
                                 <label class="hidden" for="emailCompany">Nom :</label>
-                                <input placeholder="Email*" type="email" name="emailCompany" class="bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                                <input placeholder="Email*" type="email" name="emailCompany" class="bg-[#F3F3F3] text-[#9E9E9E] input-company font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
                             </div>
                 
                             <div class="lg:w-1/2 mb-7 lg:mb-0">
                                 <label class="hidden" for="phoneCompany">Téléphone :</label>
-                                <input placeholder="Téléphone*" type="tel" name="phoneCompany" class="bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                                <input placeholder="Téléphone*" type="tel" name="phoneCompany" class="bg-[#F3F3F3] text-[#9E9E9E] input-company font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
                             </div>
                         </div>
                         
@@ -159,7 +159,7 @@ if (Astro.request.method === "POST") {
 
                         <div class="lg:w-full mb-7">
                             <label class="hidden" for="position">Je suis </label>
-                            <select name="position" class="bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">
+                            <select name="position" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">
                                 <option value="">Je suis...</option>
                                     <option value="A la recherche d’un premier travail">A la recherche d’un premier travail</option>
                                     <option value="En reconversion professionnelle et intéressé.e par les métiers verts.">En reconversion professionnelle et intéressé.e par les métiers verts.</option>
@@ -169,7 +169,7 @@ if (Astro.request.method === "POST") {
                         </div>
                         <div class="lg:w-full mb-7">
                             <label class="hidden" for="study">Je suis </label>
-                            <select name="study" class="bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">
+                            <select name="study" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">
                                 <option value="">Quel est votre niveau d'études ?</option>
                                     <option value="Infra Bac">Infra Bac</option>
                                     <option value="Bac professionnel">Bac professionnel</option>
@@ -179,7 +179,7 @@ if (Astro.request.method === "POST") {
                         </div>
                         <div class="lg:w-full mb-7">
                             <label class="hidden" for="howHearAboutUs">Je suis </label>
-                            <select name="howHearAboutUs" class="bg-[#F3F3F3] text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">
+                            <select name="howHearAboutUs" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">
                                 <option value="">Comment avez-vous entendu parler de notre programme ?</option>
                                     <option value="France Travail">France Travail</option>
                                     <option value="APEC">APEC</option>
@@ -193,8 +193,8 @@ if (Astro.request.method === "POST") {
 
                         <div class="lg:flex lg:justify-between lg:items-center mt-7 lg:mt-0">
                             <div class="mb-7 lg_mb-0">
-                                <input type="checkbox" id="isOptin" name="isOptin" />
-                                <label class="font-finalSixMedium text-sm" for="isOptin">En envoyant ce formulaire, j’accepte que la team Green Skills me recontacte.</label>
+                                <input type="checkbox" id="isOptin" name="isOptin" class="input-talent" />
+                                <label class=" font-finalSixMedium text-sm" for="isOptin">En envoyant ce formulaire, j’accepte que la team Green Skills me recontacte.</label>
                             </div>
                             <div class="flex flex-col lg:flex-row lg:gap-2 gap-4">
                                 <button class="js-btn-back lg:mt-7 font-finalSixMedium border-green border-solid border-[2px] text-green bg-white  rounded-lg py-3 px-8">Retour</button>
@@ -214,12 +214,12 @@ if (Astro.request.method === "POST") {
 
                         <div>
                             <div class="lg:w-full mb-7">
-                                <input type="checkbox" id="getBackInTouch" name="getBackInTouch" value="" />
+                                <input type="checkbox" id="getBackInTouch" name="getBackInTouch" />
                                 <label class="font-finalSixMedium text-base" for="getBackInTouch">Je souhaite être contacté par l’équipe Green Skills</label>
                             </div>
                     
                             <div class="lg:w-full mb-7">
-                                <input type="checkbox" id="offers" name="offers" value="" />
+                                <input type="checkbox" id="offers" name="offers" />
                                 <label class="font-finalSixMedium text-base" for="offers">J’ai des offres d’emplois à pourvoir</label>
                             </div>
                         </div>
@@ -254,24 +254,35 @@ if (Astro.request.method === "POST") {
     const backgroundImage = document.querySelector('.js-background');
     const arrow = document.querySelector('.js-arrow');
 
+    function setAllRequired(elementsAddRequired: any, elementsRemoveRequired: any) {
+        elementsAddRequired.forEach((item: any) => {
+            item.required = true;
+        })
 
-    function changeColorCircle(event: any) {
-        let target = event.target;
-        if(!target.classList.contains("active")) {
-            target.classList.add("active");
-            circles.forEach(element => {
-                if(element !== target) {
-                    element.classList.remove("active")
-                }
-            });
-        }
+        elementsRemoveRequired.forEach((item: any) => {
+            if(item.required) {
+                item.required = false;
+            }
+        })
+
     }
 
-    circles.forEach((item) => {
-        item.addEventListener("click" , (e) => {
-            changeColorCircle(e);
-        })
-    })
+
+    function changeColorCircle(step: any) {
+
+        step.classList.add("active");
+        circles.forEach(element => {
+            if(element !== step) {
+                element.classList.remove("active")
+            }
+        });
+    }
+
+    // circles.forEach((item) => {
+    //     item.addEventListener("click" , (e) => {
+    //         changeColorCircle(e);
+    //     })
+    // })
 
     btnContinue?.addEventListener("click" , (e) => {
         e.preventDefault();
@@ -282,6 +293,7 @@ if (Astro.request.method === "POST") {
         let step_two = document.querySelector('#step_two');
         step_two?.classList.remove('hidden');
         step_two?.classList.add('active-step');
+        changeColorCircle(document.querySelector('.step-circle-3'));
         steps.forEach((item) => {
             if(item !== step_two && item.classList.contains("active-step")) {
                 item.classList.remove('active-step');
@@ -299,6 +311,7 @@ if (Astro.request.method === "POST") {
         let step_two = document.querySelector('#step_two_company');
         step_two?.classList.remove('hidden');
         step_two?.classList.add('active-step');
+        changeColorCircle(document.querySelector('.step-circle-3'));
         steps.forEach((item) => {
             if(item !== step_two && item.classList.contains("active-step")) {
                 item.classList.remove('active-step');
@@ -317,6 +330,7 @@ if (Astro.request.method === "POST") {
         let step_choice = document.querySelector('#step_choice');
         step_choice?.classList.remove('hidden');
         step_choice?.classList.add('active-step');
+        changeColorCircle(document.querySelector('.step-circle-1'));
         steps.forEach((item) => {
             if(item !== step_choice && item.classList.contains("active-step")) {
                 item.classList.remove('active-step');
@@ -336,6 +350,7 @@ if (Astro.request.method === "POST") {
         let step_one = document.querySelector('#step_one');
         step_one?.classList.remove('hidden');
         step_one?.classList.add('active-step');
+        changeColorCircle(document.querySelector('.step-circle-2'));
         steps.forEach((item) => {
             if(item !== step_one && item.classList.contains("active-step")) {
                 item.classList.remove('active-step');
@@ -353,6 +368,7 @@ if (Astro.request.method === "POST") {
         let step_one = document.querySelector('#step_one_company');
         step_one?.classList.remove('hidden');
         step_one?.classList.add('active-step');
+        changeColorCircle(document.querySelector('.step-circle-2'));
         steps.forEach((item) => {
             if(item !== step_one && item.classList.contains("active-step")) {
                 item.classList.remove('active-step');
@@ -365,6 +381,7 @@ if (Astro.request.method === "POST") {
         //@ts-ignore
         document.querySelector('#choice_form').action = '/api/talentRegister';
         e.preventDefault();
+        setAllRequired(document.querySelectorAll('.input-talent') , document.querySelectorAll('.input-company'))
         backgroundImage?.classList.add('lg:hidden');
         backgroundImage?.classList.remove('lg:block');
         arrow?.classList.add('lg:hidden');
@@ -372,6 +389,7 @@ if (Astro.request.method === "POST") {
         let step_one = document.querySelector('#step_one');
         step_one?.classList.remove('hidden');
         step_one?.classList.add('active-step');
+        changeColorCircle(document.querySelector('.step-circle-2'));
         steps.forEach((item) => {
             if(item !== step_one && item.classList.contains("active-step")) {
                 item.classList.remove('active-step');
@@ -384,6 +402,7 @@ if (Astro.request.method === "POST") {
          //@ts-ignore
         document.querySelector('#choice_form').action = '/api/companyRegister';
         e.preventDefault();
+        setAllRequired(document.querySelectorAll('.input-company') ,document.querySelectorAll('.input-talent'));
         backgroundImage?.classList.add('lg:hidden');
         backgroundImage?.classList.remove('lg:block');
         arrow?.classList.add('lg:hidden');
@@ -391,6 +410,7 @@ if (Astro.request.method === "POST") {
         let step_one = document.querySelector('#step_one_company');
         step_one?.classList.remove('hidden');
         step_one?.classList.add('active-step');
+        changeColorCircle(document.querySelector('.step-circle-2'));
         steps.forEach((item) => {
             if(item !== step_one && item.classList.contains("active-step")) {
                 item.classList.remove('active-step');
