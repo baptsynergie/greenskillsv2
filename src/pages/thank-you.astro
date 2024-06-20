@@ -1,15 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from 'astro:assets';
+
+import alveoles from "../images/pictos/alveole_tkpage.svg";
+import arrow from "../images/pictos/arrow-tkyou.svg";
 ---
 
 <Layout title="Merci pour votre participation !" description="Merci pour votre participation au formulaire green skills !">
-    <section class="container flex justify-center items-center h-[90vh]">
+    <section class="container flex justify-center items-center h-[90vh] relative">
         <div id="step_tkyou">
 
-            <img alt="greens skills synergie family" src="src/images/pictos/alveole_tkpage.svg" class="absolute top-0 right-0" />
+            <!-- <img alt="greens skills synergie family" src="src/images/pictos/alveole_tkpage.svg" class="absolute top-0 right-0" /> -->
+            <Image src={alveoles} alt="pictos green skills" class="absolute top-0 right-0" />
+            <Image src={arrow} alt="pictos green skills" class="hidden lg:block absolute bottom-0 left-0" />
             <div class="flex flex-col justify-center items-center h-full">
                 <div class="text-green uppercase font-finalSixHeavy text-8xl text-center">Merci !</div>
-                <div class=" font-finalSixMedium text-black text-lg text-center">Notre équipe vous recontactera dès que possible</div>
+                <div class=" font-finalSixMedium text-black text-lg text-center">Notre équipe vous  drecontacteraès que possible</div>
                 <div class="mt-5">
                     <a class="text-green font-finalSixBold underline" href="/">Revenir vers la page de présentation</a>
                 </div>
