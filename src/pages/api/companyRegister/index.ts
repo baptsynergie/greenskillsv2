@@ -13,7 +13,6 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     const zipCode = formData.get("zipCode")?.toString();
     const getBackInTouch = formData.get("getBackInTouch");
     const lastname = formData.get("lastnameCompany")?.toString();
-    const offers = formData.get("offers");
 
     console.log(firstName, lastname);
 
@@ -33,7 +32,6 @@ export const POST: APIRoute = async ({ request, redirect }) => {
         firstname: firstName,
         getBackInTouch: getBackInTouch,
         lastname: lastname,
-        offers: offers,
         phone: phone,
         zipCode: zipCode,
       });

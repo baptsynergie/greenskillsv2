@@ -7,10 +7,6 @@ if (Astro.request.method === "POST") {
     console.log(Astro.request);
   try {
     const data = await Astro.request.formData();
-    const name = data.get("username");
-    const email = data.get("email");
-    const password = data.get("password");
-    // Faire quelque chose avec les données
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message);
@@ -86,8 +82,8 @@ if (Astro.request.method === "POST") {
                         </div>
 
                         <div class="lg:w-1/2">
-                            <label class="hidden" for="city">Ville :</label>
-                            <input placeholder="Ville*" type="text" name="city" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                            <label class="hidden" for="postCode">Code postal :</label>
+                            <input placeholder="Code postal*" type="text" name="postCode" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
                         </div>
                         
                         <div class="lg:flex lg:justify-between lg:items-center mt-7 lg:mt-0">
@@ -141,10 +137,16 @@ if (Astro.request.method === "POST") {
                         </div>
                         
                         <div class="lg:flex lg:justify-between lg:items-center mt-7 lg:mt-0">
-                            <p class="text-[#9E9E9E] font-finalSixMedium">Champs obligatoires(*)</p>
+                            <div class="flex flex-col gap-7">
+                                <p class="text-[#9E9E9E] font-finalSixMedium">Champs obligatoires(*)</p>
+                                <div class="lg:w-full mb-7">
+                                    <input type="checkbox" id="getBackInTouch" name="getBackInTouch" />
+                                    <label class="font-finalSixMedium text-base" for="getBackInTouch">Je souhaite être contacté par l’équipe Green Skills</label>
+                                </div>
+                            </div>
                             <div class="flex flex-col lg:flex-row lg:gap-2 gap-4">
                                 <button class="js-btn-back-choice lg:mt-7 font-finalSixMedium border-green border-solid border-[2px] text-green bg-white  rounded-lg py-3 px-8 mt-4">Retour</button>
-                                <button class="js-next-btn-company lg:mt-7 font-finalSixMedium bg-green text-white rounded-lg py-3 px-8">Continuer</button>
+                                <button class="lg:mt-7 font-finalSixMedium bg-green text-white rounded-lg py-3 px-8">Valider le formulaire</button>
                             </div>
                         </div>
                     </div>
@@ -204,36 +206,6 @@ if (Astro.request.method === "POST") {
                     </div>
 
                 </div>
-
-                <div id="step_two_company" class="js-step hidden lg:h-[380px]">
-
-                    <div class="w-full flex flex-col justify-between">
-                       
-                        <h1 class=" flex items-center gap-4 font-finalSixMedium text-lg text-center mb-12"><span class="text-white w-[45px] h-[45px] hidden lg:block bg-green p-2 rounded-full">2.</span> Laissez-nous en savoir un peu plus...</h1>
-
-                        <div>
-                            <div class="lg:w-full mb-7">
-                                <input type="checkbox" id="getBackInTouch" name="getBackInTouch" />
-                                <label class="font-finalSixMedium text-base" for="getBackInTouch">Je souhaite être contacté par l’équipe Green Skills</label>
-                            </div>
-                    
-                            <div class="lg:w-full mb-7">
-                                <input type="checkbox" id="offers" name="offers" />
-                                <label class="font-finalSixMedium text-base" for="offers">J’ai des offres d’emplois à pourvoir</label>
-                            </div>
-                        </div>
-
-                        <div class="lg:self-end">
-                            <div class="flex flex-col lg:flex-row lg:gap-2 gap-4">
-                                <button class="js-btn-back-company lg:mt-7 font-finalSixMedium border-green border-solid border-[2px] text-green bg-white rounded-lg py-3 px-8">Retour</button>
-                                <button class="lg:mt-7 font-finalSixMedium bg-green text-white rounded-lg py-3 px-8">Valider le formulaire</button>
-                            </div>
-                        </div>
-                     
-
-                    </div>
-
-                </div>
             
         </form>
     </div>
@@ -244,7 +216,7 @@ if (Astro.request.method === "POST") {
     const circles = document.querySelectorAll('.step-circle');
     const steps = document.querySelectorAll('.js-step');
     const btnContinue = document.querySelector('.js-next-btn');
-    const btnContinueCompany = document.querySelector('.js-next-btn-company');
+    // const btnContinueCompany = document.querySelector('.js-next-btn-company');
     const backBtn = document.querySelector('.js-btn-back');
     const backBtnCompany = document.querySelector('.js-btn-back-company');
     const btnTalent = document.querySelector('.js-btn-talent-form');
@@ -290,24 +262,6 @@ if (Astro.request.method === "POST") {
         arrow?.classList.add('lg:hidden');
         arrow?.classList.remove('lg:block');
         let step_two = document.querySelector('#step_two');
-        step_two?.classList.remove('hidden');
-        step_two?.classList.add('active-step');
-        changeColorCircle(document.querySelector('.step-circle-3'));
-        steps.forEach((item) => {
-            if(item !== step_two && item.classList.contains("active-step")) {
-                item.classList.remove('active-step');
-                item.classList.add('hidden');
-            }
-        })
-    })
-
-    btnContinueCompany?.addEventListener("click" , (e) => {
-        e.preventDefault();
-        backgroundImage?.classList.add('lg:hidden');
-        backgroundImage?.classList.remove('lg:block');
-        arrow?.classList.add('lg:hidden');
-        arrow?.classList.remove('lg:block');
-        let step_two = document.querySelector('#step_two_company');
         step_two?.classList.remove('hidden');
         step_two?.classList.add('active-step');
         changeColorCircle(document.querySelector('.step-circle-3'));
