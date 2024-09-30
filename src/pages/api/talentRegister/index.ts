@@ -9,9 +9,6 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     const email = formData.get("email")?.toString();
     const phone = formData.get("phone")?.toString();
     const postCode = formData.get("postCode")?.toString();
-    const position = formData.get("position")?.toString();
-    const study = formData.get("study")?.toString();
-    const howHearAboutUs = formData.get("howHearAboutUs")?.toString();
     const isOptin = formData.get("isOptin");
     
     if (!firstName || !lastName || !email || !phone || !postCode) {
@@ -28,9 +25,6 @@ export const POST: APIRoute = async ({ request, redirect }) => {
         lastname: lastName,
         phone: phone,
         postCode: postCode,
-        position: position,
-        study: study,
-        howHearAboutUs : howHearAboutUs,
         isOptin: isOptin,
       });
     } catch (error) {
