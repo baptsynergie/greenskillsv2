@@ -65,7 +65,7 @@ if (Astro.request.method === "POST") {
                 
                             <div class="lg:w-1/2 mb-7 lg:mb-0">
                                 <label class="hidden" for="firstname">Prénom :</label>
-                                <input placeholder="Prénom*"type="text" name="firstname" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                                <input placeholder="Prénom*" type="text" name="firstname" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
                             </div>
                         </div>
 
@@ -85,12 +85,17 @@ if (Astro.request.method === "POST") {
                             <label class="hidden" for="postCode">Code postal :</label>
                             <input placeholder="Code postal*" type="text" name="postCode" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
                         </div>
+
+                        <div class="mb-7 lg_mb-0 mt-7">
+                            <input type="checkbox" id="isOptin" name="isOptin" class="input-talent" />
+                            <label class=" font-finalSixMedium text-sm" for="isOptin">En envoyant ce formulaire, j’accepte que la team Green Skills me recontacte.</label>
+                        </div>
                         
                         <div class="lg:flex lg:justify-between lg:items-center mt-7 lg:mt-0">
                             <p class="text-[#9E9E9E] font-finalSixMedium">Champs obligatoires(*)</p>
                             <div class="flex flex-col lg:flex-row lg:gap-2 gap-4">
                                 <button class="js-btn-back-choice lg:mt-7 font-finalSixMedium border-green border-solid border-[2px] text-green bg-white  rounded-lg py-3 px-8 mt-4">Retour</button>
-                                <button class="js-next-btn lg:mt-7 font-finalSixMedium bg-green text-white rounded-lg py-3 px-8">Continuer</button>
+                                <button class="js-next-btn lg:mt-7 font-finalSixMedium bg-green text-white rounded-lg py-3 px-8">Valider le formulaire</button>
                             </div>
                         </div>
                     </div>
@@ -154,58 +159,55 @@ if (Astro.request.method === "POST") {
    
 
            
-                <div id="step_two" class="js-step hidden lg:h-[380px]">
+                <!--<div id="step_two" class="js-step hidden lg:h-[380px]">-->
 
-                    <div class="w-full">
-                        <h1 class=" flex items-center gap-4 font-finalSixMedium text-lg text-center mb-12"><span class="text-white w-[45px] h-[45px] hidden lg:block bg-green p-2 rounded-full">2.</span> Laissez-nous en savoir un peu plus...</h1>
+                <!--    <div class="w-full">-->
+                <!--        <h1 class=" flex items-center gap-4 font-finalSixMedium text-lg text-center mb-12"><span class="text-white w-[45px] h-[45px] hidden lg:block bg-green p-2 rounded-full">2.</span> Laissez-nous en savoir un peu plus...</h1>-->
 
-                        <div class="lg:w-full mb-7">
-                            <label class="hidden" for="position">Je suis </label>
-                            <select name="position" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">
-                                <option value="">Je suis...</option>
-                                    <option value="A la recherche d’un premier travail">A la recherche d’un premier travail</option>
-                                    <option value="En reconversion professionnelle et intéressé.e par les métiers verts.">En reconversion professionnelle et intéressé.e par les métiers verts.</option>
-                                    <option value="Déjà dans le secteur mais je suis actuellement sans emploi.">Déjà dans le secteur mais je suis actuellement sans emploi.</option>
-                                    <option value="Peu au courant et je souhaite me sensibiliser sur les métiers verts de l’industrie pour savoir si cela peut m’intéresser.">Peu au courant et je souhaite me sensibiliser sur les métiers verts de l’industrie pour savoir si cela peut m’intéresser.</option>
-                            </select>
-                        </div>
-                        <div class="lg:w-full mb-7">
-                            <label class="hidden" for="study">Je suis </label>
-                            <select name="study" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">
-                                <option value="">Quel est votre niveau d'études ?</option>
-                                    <option value="Infra Bac">Infra Bac</option>
-                                    <option value="Bac professionnel">Bac professionnel</option>
-                                    <option value="Bac +2 +3 ou équivalent">Bac +2 +3 ou équivalent</option>
-                                    <option value="Bac +5 ou doctorant.e">Bac +5 ou doctorant.e</option>
-                            </select>
-                        </div>
-                        <div class="lg:w-full mb-7">
-                            <label class="hidden" for="howHearAboutUs">Je suis </label>
-                            <select name="howHearAboutUs" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">
-                                <option value="">Comment avez-vous entendu parler de notre programme ?</option>
-                                    <option value="France Travail">France Travail</option>
-                                    <option value="APEC">APEC</option>
-                                    <option value="Missions locales">Missions locales</option>
-                                    <option value="Réseau sociaux et internet">Réseau sociaux et internet</option>
-                                    <option value="Bouche à oreille">Bouche à oreille</option>
-                                    <option value="Autres">Autres</option>
-                            </select>
-                        </div>
+                <!--        <div class="lg:w-full mb-7">-->
+                <!--            <label class="hidden" for="position">Je suis </label>-->
+                <!--            <select name="position" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">-->
+                <!--                <option value="">Je suis...</option>-->
+                <!--                    <option value="A la recherche d’un premier travail">A la recherche d’un premier travail</option>-->
+                <!--                    <option value="En reconversion professionnelle et intéressé.e par les métiers verts.">En reconversion professionnelle et intéressé.e par les métiers verts.</option>-->
+                <!--                    <option value="Déjà dans le secteur mais je suis actuellement sans emploi.">Déjà dans le secteur mais je suis actuellement sans emploi.</option>-->
+                <!--                    <option value="Peu au courant et je souhaite me sensibiliser sur les métiers verts de l’industrie pour savoir si cela peut m’intéresser.">Peu au courant et je souhaite me sensibiliser sur les métiers verts de l’industrie pour savoir si cela peut m’intéresser.</option>-->
+                <!--            </select>-->
+                <!--        </div>-->
+                <!--        <div class="lg:w-full mb-7">-->
+                <!--            <label class="hidden" for="study">Je suis </label>-->
+                <!--            <select name="study" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">-->
+                <!--                <option value="">Quel est votre niveau d'études ?</option>-->
+                <!--                    <option value="Infra Bac">Infra Bac</option>-->
+                <!--                    <option value="Bac professionnel">Bac professionnel</option>-->
+                <!--                    <option value="Bac +2 +3 ou équivalent">Bac +2 +3 ou équivalent</option>-->
+                <!--                    <option value="Bac +5 ou doctorant.e">Bac +5 ou doctorant.e</option>-->
+                <!--            </select>-->
+                <!--        </div>-->
+                <!--        <div class="lg:w-full mb-7">-->
+                <!--            <label class="hidden" for="howHearAboutUs">Je suis </label>-->
+                <!--            <select name="howHearAboutUs" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">-->
+                <!--                <option value="">Comment avez-vous entendu parler de notre programme ?</option>-->
+                <!--                    <option value="France Travail">France Travail</option>-->
+                <!--                    <option value="APEC">APEC</option>-->
+                <!--                    <option value="Missions locales">Missions locales</option>-->
+                <!--                    <option value="Réseau sociaux et internet">Réseau sociaux et internet</option>-->
+                <!--                    <option value="Bouche à oreille">Bouche à oreille</option>-->
+                <!--                    <option value="Autres">Autres</option>-->
+                <!--            </select>-->
+                <!--        </div>-->
 
-                        <div class="lg:flex lg:justify-between lg:items-center mt-7 lg:mt-0">
-                            <div class="mb-7 lg_mb-0">
-                                <input type="checkbox" id="isOptin" name="isOptin" class="input-talent" />
-                                <label class=" font-finalSixMedium text-sm" for="isOptin">En envoyant ce formulaire, j’accepte que la team Green Skills me recontacte.</label>
-                            </div>
-                            <div class="flex flex-col lg:flex-row lg:gap-2 gap-4">
-                                <button class="js-btn-back lg:mt-7 font-finalSixMedium border-green border-solid border-[2px] text-green bg-white  rounded-lg py-3 px-8">Retour</button>
-                                <button class="lg:mt-7 font-finalSixMedium bg-green text-white rounded-lg py-3 px-8">Valider le formulaire</button>
-                            </div>
-                        </div>
+                <!--        <div class="lg:flex lg:justify-between lg:items-center mt-7 lg:mt-0">-->
+                <!--            -->
+                <!--            <div class="flex flex-col lg:flex-row lg:gap-2 gap-4">-->
+                <!--                <button class="js-btn-back lg:mt-7 font-finalSixMedium border-green border-solid border-[2px] text-green bg-white  rounded-lg py-3 px-8">Retour</button>-->
+                <!--                <button class="lg:mt-7 font-finalSixMedium bg-green text-white rounded-lg py-3 px-8">Valider le formulaire</button>-->
+                <!--            </div>-->
+                <!--        </div>-->
 
-                    </div>
+                <!--    </div>-->
 
-                </div>
+                <!--</div>-->
             
         </form>
     </div>
@@ -215,7 +217,7 @@ if (Astro.request.method === "POST") {
 
     const circles = document.querySelectorAll('.step-circle');
     const steps = document.querySelectorAll('.js-step');
-    const btnContinue = document.querySelector('.js-next-btn');
+    // const btnContinue = document.querySelector('.js-next-btn');
     // const btnContinueCompany = document.querySelector('.js-next-btn-company');
     const backBtn = document.querySelector('.js-btn-back');
     const backBtnCompany = document.querySelector('.js-btn-back-company');
@@ -255,23 +257,23 @@ if (Astro.request.method === "POST") {
     //     })
     // })
 
-    btnContinue?.addEventListener("click" , (e) => {
-        e.preventDefault();
-        backgroundImage?.classList.add('lg:hidden');
-        backgroundImage?.classList.remove('lg:block');
-        arrow?.classList.add('lg:hidden');
-        arrow?.classList.remove('lg:block');
-        let step_two = document.querySelector('#step_two');
-        step_two?.classList.remove('hidden');
-        step_two?.classList.add('active-step');
-        changeColorCircle(document.querySelector('.step-circle-3'));
-        steps.forEach((item) => {
-            if(item !== step_two && item.classList.contains("active-step")) {
-                item.classList.remove('active-step');
-                item.classList.add('hidden');
-            }
-        })
-    })
+    // btnContinue?.addEventListener("click" , (e) => {
+    //     e.preventDefault();
+    //     backgroundImage?.classList.add('lg:hidden');
+    //     backgroundImage?.classList.remove('lg:block');
+    //     arrow?.classList.add('lg:hidden');
+    //     arrow?.classList.remove('lg:block');
+    //     let step_two = document.querySelector('#step_two');
+    //     step_two?.classList.remove('hidden');
+    //     step_two?.classList.add('active-step');
+    //     changeColorCircle(document.querySelector('.step-circle-3'));
+    //     steps.forEach((item) => {
+    //         if(item !== step_two && item.classList.contains("active-step")) {
+    //             item.classList.remove('active-step');
+    //             item.classList.add('hidden');
+    //         }
+    //     })
+    // })
 
     backToChoice.forEach((item) => {
         item?.addEventListener("click" , (e) => {
