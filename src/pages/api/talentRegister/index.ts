@@ -9,9 +9,12 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     const email = formData.get("email")?.toString();
     const phone = formData.get("phone")?.toString();
     const postCode = formData.get("postCode")?.toString();
+    const birthDay = formData.get("birthDay")?.toString();
     const isOptin = formData.get("isOptin");
+
+    const now = new Date();
     
-    if (!firstName || !lastName || !email || !phone || !postCode) {
+    if (!firstName || !lastName || !email || !phone || !postCode || !birthDay) {
       return new Response("Missing required fields", {
         status: 400,
       });
@@ -25,6 +28,8 @@ export const POST: APIRoute = async ({ request, redirect }) => {
         lastname: lastName,
         phone: phone,
         postCode: postCode,
+          birthDay : birthDay,
+          createdAt: now,
         isOptin: isOptin,
       });
     } catch (error) {
