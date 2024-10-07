@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import alveoles from "../images/pictos/alveoles_choice.svg";
 import arrow from "../images/pictos/arrow_choice.svg";
 
+
 if (Astro.request.method === "POST") {
     console.log(Astro.request);
   try {
@@ -81,9 +82,15 @@ if (Astro.request.method === "POST") {
                             </div>
                         </div>
 
-                        <div class="lg:w-1/2">
-                            <label class="hidden" for="postCode">Code postal :</label>
-                            <input placeholder="Code postal*" type="text" name="postCode" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                        <div class="lg:flex lg:items-center lg:gap-5 mb-7">
+                            <div class="lg:w-1/2">
+                                <label class="hidden" for="postCode">Code postal :</label>
+                                <input placeholder="Code postal*" type="text" name="postCode" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                            </div>
+                            <div class="lg:w-1/2">
+                                <label class="hidden" for="birthDay">Date de naissance :</label>
+                                <input id="birthDay" placeholder="Date de naissance (JJ/MM/YYYY)" type="text" name="birthDay" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full" />
+                            </div>
                         </div>
 
                         <div class="mb-7 lg_mb-0 mt-7">
@@ -156,64 +163,15 @@ if (Astro.request.method === "POST") {
                         </div>
                     </div>
                 </div>
-   
-
-           
-                <!--<div id="step_two" class="js-step hidden lg:h-[380px]">-->
-
-                <!--    <div class="w-full">-->
-                <!--        <h1 class=" flex items-center gap-4 font-finalSixMedium text-lg text-center mb-12"><span class="text-white w-[45px] h-[45px] hidden lg:block bg-green p-2 rounded-full">2.</span> Laissez-nous en savoir un peu plus...</h1>-->
-
-                <!--        <div class="lg:w-full mb-7">-->
-                <!--            <label class="hidden" for="position">Je suis </label>-->
-                <!--            <select name="position" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">-->
-                <!--                <option value="">Je suis...</option>-->
-                <!--                    <option value="A la recherche d’un premier travail">A la recherche d’un premier travail</option>-->
-                <!--                    <option value="En reconversion professionnelle et intéressé.e par les métiers verts.">En reconversion professionnelle et intéressé.e par les métiers verts.</option>-->
-                <!--                    <option value="Déjà dans le secteur mais je suis actuellement sans emploi.">Déjà dans le secteur mais je suis actuellement sans emploi.</option>-->
-                <!--                    <option value="Peu au courant et je souhaite me sensibiliser sur les métiers verts de l’industrie pour savoir si cela peut m’intéresser.">Peu au courant et je souhaite me sensibiliser sur les métiers verts de l’industrie pour savoir si cela peut m’intéresser.</option>-->
-                <!--            </select>-->
-                <!--        </div>-->
-                <!--        <div class="lg:w-full mb-7">-->
-                <!--            <label class="hidden" for="study">Je suis </label>-->
-                <!--            <select name="study" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">-->
-                <!--                <option value="">Quel est votre niveau d'études ?</option>-->
-                <!--                    <option value="Infra Bac">Infra Bac</option>-->
-                <!--                    <option value="Bac professionnel">Bac professionnel</option>-->
-                <!--                    <option value="Bac +2 +3 ou équivalent">Bac +2 +3 ou équivalent</option>-->
-                <!--                    <option value="Bac +5 ou doctorant.e">Bac +5 ou doctorant.e</option>-->
-                <!--            </select>-->
-                <!--        </div>-->
-                <!--        <div class="lg:w-full mb-7">-->
-                <!--            <label class="hidden" for="howHearAboutUs">Je suis </label>-->
-                <!--            <select name="howHearAboutUs" class="bg-[#F3F3F3] input-talent text-[#9E9E9E] font-finalSixMedium outline-green outline-2 py-3 px-8 rounded-lg w-full">-->
-                <!--                <option value="">Comment avez-vous entendu parler de notre programme ?</option>-->
-                <!--                    <option value="France Travail">France Travail</option>-->
-                <!--                    <option value="APEC">APEC</option>-->
-                <!--                    <option value="Missions locales">Missions locales</option>-->
-                <!--                    <option value="Réseau sociaux et internet">Réseau sociaux et internet</option>-->
-                <!--                    <option value="Bouche à oreille">Bouche à oreille</option>-->
-                <!--                    <option value="Autres">Autres</option>-->
-                <!--            </select>-->
-                <!--        </div>-->
-
-                <!--        <div class="lg:flex lg:justify-between lg:items-center mt-7 lg:mt-0">-->
-                <!--            -->
-                <!--            <div class="flex flex-col lg:flex-row lg:gap-2 gap-4">-->
-                <!--                <button class="js-btn-back lg:mt-7 font-finalSixMedium border-green border-solid border-[2px] text-green bg-white  rounded-lg py-3 px-8">Retour</button>-->
-                <!--                <button class="lg:mt-7 font-finalSixMedium bg-green text-white rounded-lg py-3 px-8">Valider le formulaire</button>-->
-                <!--            </div>-->
-                <!--        </div>-->
-
-                <!--    </div>-->
-
-                <!--</div>-->
             
         </form>
     </div>
 </section>
 
 <script>
+
+    // @ts-ignore
+    import Cleave from 'cleave.js';
 
     const circles = document.querySelectorAll('.step-circle');
     const steps = document.querySelectorAll('.js-step');
@@ -226,6 +184,15 @@ if (Astro.request.method === "POST") {
     const backToChoice = document.querySelectorAll('.js-btn-back-choice');
     const backgroundImage = document.querySelector('.js-background');
     const arrow = document.querySelector('.js-arrow');
+    const inputBirthDay = document.querySelector("#birthDay");
+
+    const cleave = new Cleave(inputBirthDay, {
+        date: true,
+        delimiter: '/',
+        datePattern: ['d', 'm', 'Y']
+    });
+
+
 
     function setAllRequired(elementsAddRequired: any, elementsRemoveRequired: any) {
         elementsAddRequired.forEach((item: any) => {

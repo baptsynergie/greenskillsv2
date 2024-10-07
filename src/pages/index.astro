@@ -20,10 +20,11 @@ import Partners from '../components/Partners.astro';
 
 // img events
 
-import event1 from '../images/card_event/business_ble.png';
-import event2 from '../images/card_event/rencontre_metiers_verts.png';
-import event3 from '../images/card_event/eolien.png';
-import Footer from '../components/Footer.astro';
+import event1 from '../images/card_event/07-11.jpeg'
+import event2 from '../images/card_event/08-11.png'
+import event3 from '../images/card_event/14-10.jpeg';
+import event4 from '../images/card_event/22-10.png';
+import event5 from '../images/card_event/31-10.png';
 
 import pictoLight from '../images/pictos/picto_light.svg';
 import BlocProgram from '../components/BlocProgram.astro';
@@ -58,8 +59,6 @@ const listProgram = [
 
 <section id="who-whe-are" class="margin-block relative pb-[var(--blocks-gap)]">
 	<Image src={alveoles} alt="image de l'équipe" class="absolute bottom-0 right-0 z-0" />
-	<!-- <Image src={arrow} alt="image de l'équipe" class="absolute left-0 top-0 hidden lg:block" />
-	<Image src={arrow2} alt="image de l'équipe" class="absolute right-0 top-0 lg:hidden" /> -->
 	<div class="container">
 		<h2 class="text-center text-black text-3xl font-finalSixBlack mb-5">Green Skills</h2>
 		<h3 class="mb-[var(--blocks-gap-demi)] lg:w-9/12 lg:mx-auto font-finalSixMedium text-2xl text-center"> est un programme qui répond aux besoins en recrutement
@@ -93,13 +92,29 @@ const listProgram = [
 
 <StepForm />
 
-<section id="event" class="margin-block">
-	<h2 class="text-center text-black text-3xl font-finalSixBlack mb-[var(--blocks-gap-demi)]">Nos événements</h2>
-	<div class="container lg:flex lg:items-center lg:gap-20 space-y-8 lg:space-y-0 pb-[var(--blocks-gap)]">
-		<EventCard link="https://bit.ly/4erlxMx" image={event1} date="25/06/2024" name="Les rencontres Green Skills #1 - L’économie circulaire" place="L’Épopée village 9h-16h" description='' delay="300" /> 
-		<EventCard link="#step-form" image={event3} date="01/07/2024" name="Semaine thématique autour des métiers de l’éolien" place="L'Épopée village" description='' delay="900" /> 
-		<EventCard link="#step-form" image={event2} date="09/09/2024" name="Semaine thématique : La revalorisation des déchets" place="L'Épopée village" description='' delay="600" /> 
-		
+	<!--container lg:flex lg:items-center lg:gap-20 space-y-8 lg:space-y-0 pb-[var(&#45;&#45;blocks-gap)]-->
+<section id="event" class="margin-block container relative">
+	<div class="cursor-pointer btn-next absolute right-0 top-[50%] bottom-[50%] translate-x-[100%]"><svg class="btn-navigation-slider hover:text-white hover:bg-green p-2 border-[2px] border-green rounded-full" width="50px" height="50px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#00bf63"><path d="M9 6L15 12L9 18" stroke="#00bf63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+	<div class="cursor-pointer btn-prev rotate-180 absolute left-0 top-[50%] bottom-[50%] translate-x-[-100%]"><svg class="btn-navigation-slider hover:text-white hover:bg-green p-2 border-[2px] border-green rounded-full" width="50px" height="50px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#00bf63"><path d="M9 6L15 12L9 18" stroke="#00bf63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+	<h2 class="text-center text-black text-3xl font-finalSixBlack">Nos événements</h2>
+	<div class="swiper">
+		<div class="swiper-wrapper pt-[var(--blocks-gap-demi)] pb-[var(--blocks-gap)] pr-5">
+			<div class="swiper-slide">
+				<EventCard link="https://forms.gle/vXGv5Cq1vUx4iZS89" image={event3} date="14/10/2024" name="Semaine thématique #2 - Le photovoltaïque" place="L’Épopée village" description='' delay="300" />
+			</div>
+			<div class="swiper-slide">
+				<EventCard link="#step-form" image={event4} date="22/10/2024" name="Rencontre Green Skills Upcycling" place="L’Épopée village" description='' delay="300" />
+			</div>
+			<div class="swiper-slide">
+				<EventCard link="#step-form" image={event5} date="31/10/2024" name="Focus métier soudage" place="L’Épopée village" description='' delay="300" />
+			</div>
+			<div class="swiper-slide">
+				<EventCard link="#step-form" image={event1} date="07/11/2024" name="Rencontre Green Skills - L'Eolien" place="L’Épopée village" description='' delay="300" />
+			</div>
+			<div class="swiper-slide">
+				<EventCard link="#step-form" image={event2} date="08/11/2024" name="Journée de sensibilisation aux métiers de la transition écologique" place="L’Épopée village 9h-17h" description='' delay="300" />
+			</div>
+		</div>
 	</div>
 </section>
 
@@ -113,6 +128,36 @@ const listProgram = [
 </section>
 	
 </Layout>
+
+<script>
+	import Swiper from 'swiper';
+	import { Navigation } from 'swiper/modules';
+	import 'swiper/css';
+
+	const swiper = new Swiper('.swiper', {
+		// Optional parameters
+		modules: [Navigation],
+		slidesPerView : 1.2,
+		spaceBetween: 40,
+		breakpoints : {
+			768 : {
+				slidesPerView : 2,
+			},
+			1024 : {
+				slidesPerView : 3,
+				spaceBetween: 80,
+			}
+		},
+
+		// Navigation arrows
+		navigation: {
+			nextEl: '.btn-next',
+			prevEl: '.btn-prev',
+		},
+
+	});
+
+</script>
 
 
 
