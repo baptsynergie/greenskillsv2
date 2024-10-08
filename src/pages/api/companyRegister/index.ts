@@ -14,9 +14,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     const getBackInTouch = formData.get("getBackInTouch");
     const lastname = formData.get("lastnameCompany")?.toString();
 
-    console.log(firstName, lastname);
-
-    console.log(formData);
+    const now = new Date();
     
     if (!firstName || !lastname || !companyName || !email || !phone || !zipCode) {
       return new Response("Missing required fields", {
@@ -34,6 +32,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
         lastname: lastname,
         phone: phone,
         zipCode: zipCode,
+        createdAt: now.toLocaleDateString("fr"),
       });
     } catch (error) {
         console.log(error)

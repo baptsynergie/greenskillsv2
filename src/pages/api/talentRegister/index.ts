@@ -29,7 +29,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
         phone: phone,
         postCode: postCode,
           birthDay : birthDay,
-          createdAt: now,
+          createdAt:  now.toLocaleDateString("fr"),
         isOptin: isOptin,
       });
     } catch (error) {

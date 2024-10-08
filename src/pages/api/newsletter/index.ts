@@ -8,6 +8,8 @@ export const POST: APIRoute = async ({ request, redirect }) => {
 
   const email = body.email;
 
+  const now = new Date();
+
   if (!email) {
     return new Response("Missing required fields", {
       status: 400,
@@ -21,6 +23,8 @@ export const POST: APIRoute = async ({ request, redirect }) => {
 
     await newsletter.add({
       email: email,
+      createdAt : now.toLocaleDateString("fr"),
+
     });
 
   } catch (error) {

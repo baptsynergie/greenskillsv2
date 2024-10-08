@@ -8,6 +8,8 @@ export const POST: APIRoute = async ({ request, redirect }) => {
 
     const email = body.email;
 
+    const now = new Date();
+
     if (!email) {
       return new Response("Missing required fields", {
         status: 400,
@@ -17,7 +19,8 @@ export const POST: APIRoute = async ({ request, redirect }) => {
       const db = getFirestore(app);
       const contactRef = db.collection("contact");
       await contactRef.add({
-        email,
+        email: email,
+          createdAt : now.toLocaleDateString("fr")
       });
     } catch (error) {
         console.log(error)
