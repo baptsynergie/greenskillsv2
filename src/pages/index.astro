@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Band from '../components/Band.astro';
 import InfosBloc from '../components/InfosBloc.astro';
 import { Image } from 'astro:assets';
+import { app } from "../firebase/server";
+import { getFirestore } from "firebase-admin/firestore";
 
 import picto1 from '../images/pictos/picto_green1.svg';
 import alveoles from '../images/pictos/alveoles.svg';
@@ -20,11 +22,15 @@ import Partners from '../components/Partners.astro';
 
 // img events
 
-import event1 from '../images/card_event/07-11.jpeg'
-import event2 from '../images/card_event/08-11.png'
-import event3 from '../images/card_event/14-10.jpeg';
-import event4 from '../images/card_event/22-10.png';
-import event5 from '../images/card_event/31-10.png';
+import event1 from '../images/card_event/event1.jpg'
+import event2 from '../images/card_event/event2.jpg'
+import event3 from '../images/card_event/event3.jpg'
+import event4 from '../images/card_event/event4.jpg'
+import event5 from '../images/card_event/event5.jpg'
+import event6 from '../images/card_event/event6.jpg'
+import event7 from '../images/card_event/event7.jpg'
+import event8 from '../images/card_event/event8.jpg'
+
 
 import pictoLight from '../images/pictos/picto_light.svg';
 import BlocProgram from '../components/BlocProgram.astro';
@@ -50,6 +56,24 @@ const listProgram = [
 	'Immersions, découverte des entreprises et de leurs métiers, événements de recrutements ludiques',
 ]
 
+interface Event {
+	id: string,
+	date: string,
+	hours: string,
+	image: string,
+	link: string,
+	place : string,
+	title : string,
+}
+
+const db = getFirestore(app);
+const eventsRef = db.collection("event");
+const eventsSnapshot = await eventsRef.get();
+
+const events = eventsSnapshot.docs.map((doc) => ({
+	id: doc.id,
+	...doc.data(),
+})) as Event[];
 
 ---
 
@@ -100,20 +124,31 @@ const listProgram = [
 	<div class="swiper">
 		<div class="swiper-wrapper pt-[var(--blocks-gap-demi)] pb-[var(--blocks-gap)] pr-5">
 			<div class="swiper-slide">
-				<EventCard link="https://forms.gle/vXGv5Cq1vUx4iZS89" image={event3} date="14/10/2024" name="Semaine thématique #2 - Le photovoltaïque" place="L’Épopée village" description='' delay="300" />
+				<EventCard link="https://docs.google.com/forms/d/e/1FAIpQLScMl19PTpKKpGeG-E3wYEvfPM3n-0bwf9xLJ203xDAcAC5DfA/viewform" image={event1} date="07/11/2024" name="Rencontre Green Skills # 2 : L’électrolyse au service de l’énergie verte" place="Entreprise KEMONE à Fos sur Mer" description='8h30 - 12H30' delay="300" />
 			</div>
 			<div class="swiper-slide">
-				<EventCard link="#step-form" image={event4} date="22/10/2024" name="Rencontre Green Skills Upcycling" place="L’Épopée village" description='' delay="300" />
+				<EventCard link="https://forms.gle/mvZ7C2AtBmwz1fFJ8" image={event2} date="13/11/2024" name="Focus Métiers : Soudure" place="Épopée" description='Structures partenaires : RDF - AFPA -  MARSEA' delay="300" />
 			</div>
 			<div class="swiper-slide">
-				<EventCard link="#step-form" image={event5} date="31/10/2024" name="Focus métier soudage" place="L’Épopée village" description='' delay="300" />
+				<EventCard link="https://forms.gle/AFnjaqqBTgxu8ywN9" image={event3} date="Plusieurs dates disponibles" name="Les ateliers d’accompagnement" place="Epopée" description='CV Motivationnel - Pitch & Posture en entretien - Réseautage vert Boost ton Linkedin - Gestion du stress' delay="300" />
 			</div>
 			<div class="swiper-slide">
-				<EventCard link="#step-form" image={event1} date="07/11/2024" name="Rencontre Green Skills - L'Eolien" place="L’Épopée village" description='' delay="300" />
+				<EventCard link="#step-form" image={event4} date="14/11/2024" name="Journée départementale de l’emploi" place="Hôtel du département" description='' delay="300" />
 			</div>
 			<div class="swiper-slide">
-				<EventCard link="https://forms.gle/7ZHUiDkTc5x9kZea6" image={event2} date="08/11/2024" name="Journée de sensibilisation aux métiers de la transition écologique" place="Centre social Romain Rolland 13010 10h-15h" description='' delay="300" />
+				<EventCard link="https://forms.gle/jUmi3nvCdGjKSrD88" image={event5} date="du 18 au 22/11/24 et du 25 au 29/11/24" name="Les Rencontres Green Skills # 3 : FORINDUSTRIE" place="Épopée et Hors les Murs" description='9h30 - 16h30' delay="300" />
 			</div>
+			<div class="swiper-slide">
+				<EventCard link="https://forms.gle/Q1sydbPH5mv6zta59" image={event6} date=" 2,3 et 4 décembre 2024" name="Semaine thématique # 3 : Les métiers de l’énergie renouvelables avec DALKIA (groupe EDF)" place="Épopée" description='9h30 - 16h30 - Structures partenaires : DALKIA' delay="300" />
+			</div>
+			<div class="swiper-slide">
+				<EventCard link="https://forms.gle/qJ9AqsSH7mJcy2K17" image={event7} date="06/12/2024" name="Rencontre Green Skills # 4 – Sensibilisation à la transition écologique " place="Centre Social Romain Rolland" description='Structures partenaires :  RDF' delay="300" />
+			</div>
+			<div class="swiper-slide">
+				<EventCard link="https://forms.gle/kw6EFqVnitur8niW9" image={event8} date="12/12/2024" name="Rencontre Green Skills # 5 : L’économie circulaire" place="Épopée" description='9h30 - 16h30' delay="300" />
+			</div>
+
+
 		</div>
 	</div>
 </section>

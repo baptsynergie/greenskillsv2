@@ -4,6 +4,12 @@ import type { APIRoute } from "astro";
 import * as XLSX from "xlsx";
 
 export const GET: APIRoute = async ({ request }) => {
+
+    // const password = req.query.password;
+    // if (password !== process.env.EXPORT_PASSWORD) {
+    //     return res.status(403).json({ message: 'Accès refusé' });
+    // }
+
     const db = getFirestore(app);
     const talentRef = db.collection("talentRegister");
     const talentSnapshot = await talentRef.get();
