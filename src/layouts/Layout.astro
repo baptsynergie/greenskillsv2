@@ -125,6 +125,18 @@ const { title, description } = Astro.props;
 		--blocks-gap-tremi: calc(var(--blocks-gap) / 3);
 	}
 
+	@media (min-width: 768px) {
+		:root {
+			--h-padding: 96px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		:root {
+		--h-padding: 20px;
+	}
+	}
+
 	.margin-block {
 		margin-top: var(--blocks-gap);
 	}
@@ -189,6 +201,16 @@ const { title, description } = Astro.props;
 		.btn-navigation-slider {
 			display: block !important;
 		}
+	}
+
+	.swiper-pagination-bullet {
+		transition : all .2s ease !important;
+	}
+
+	.swiper-pagination-bullet-active {
+		background-color: #00BF63 !important;
+		width : 20px !important;
+		border-radius:5px !important;
 	}
 
 

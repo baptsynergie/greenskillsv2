@@ -3,9 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Band from '../components/Band.astro';
 import InfosBloc from '../components/InfosBloc.astro';
-import { Image } from 'astro:assets';
-import { app } from "../firebase/server";
-import { getFirestore } from "firebase-admin/firestore";
+import {Image} from 'astro:assets';
+import {app} from "../firebase/server";
+import {getFirestore} from "firebase-admin/firestore";
 
 import picto1 from '../images/pictos/picto_green1.svg';
 import alveoles from '../images/pictos/alveoles.svg';
@@ -30,6 +30,12 @@ import event5 from '../images/card_event/event5.jpg'
 import event6 from '../images/card_event/event6.jpg'
 import event7 from '../images/card_event/event7.jpg'
 import event8 from '../images/card_event/event8.jpg'
+import event9 from '../images/card_event/event-recyclage-greenskills.png'
+import event10 from '../images/card_event/les-ateliers-d-accompagnement.jpg'
+import event11 from '../images/card_event/recruteur.jpg'
+import event12 from '../images/card_event/ici_marseille.png.jpg'
+
+
 
 
 import pictoLight from '../images/pictos/picto_light.svg';
@@ -40,30 +46,30 @@ import flash from '../images/pictos/flash.svg'
 
 
 const list1 = [
-	'<span class=" font-finalSixExtraBold">Secteur de l’énergie verte :</span> nouveaux systèmes industriels et énergies renouvelables (éolien en mer, hydrogène vert, photovoltaïque, biogaz & biomasse...)',
-	'<span class=" font-finalSixExtraBold">Économie circulaire : </span>recyclage, traitement et transformation des déchets et prolongation de la durée de vie des déchets)'
+    '<span class=" font-finalSixExtraBold">Secteur de l’énergie verte :</span> nouveaux systèmes industriels et énergies renouvelables (éolien en mer, hydrogène vert, photovoltaïque, biogaz & biomasse...)',
+    '<span class=" font-finalSixExtraBold">Économie circulaire : </span>recyclage, traitement et transformation des déchets et prolongation de la durée de vie des déchets)'
 ]
 
 
 
 const list2 = [
-	'<span class=" font-finalSixExtraBold">Bouches-du-Rhône :</span> avec un focus sur les bassins d’emploi de Marseille, Étang de Berre et Fos/Gardanne',
+    '<span class=" font-finalSixExtraBold">Bouches-du-Rhône :</span> avec un focus sur les bassins d’emploi de Marseille, Étang de Berre et Fos/Gardanne',
 ]
 
 const listProgram = [
-	'Ateliers “Éco-Découverte” par l\'expérience des métiers verts et événements rencontres et forums emploi',
-	'Accompagnement personnalisé des candidats intéressés',
-	'Immersions, découverte des entreprises et de leurs métiers, événements de recrutements ludiques',
+    'Ateliers “Éco-Découverte” par l\'expérience des métiers verts et événements rencontres et forums emploi',
+    'Accompagnement personnalisé des candidats intéressés',
+    'Immersions, découverte des entreprises et de leurs métiers, événements de recrutements ludiques',
 ]
 
 interface Event {
-	id: string,
-	date: string,
-	hours: string,
-	image: string,
-	link: string,
-	place : string,
-	title : string,
+    id: string,
+    date: string,
+    hours: string,
+    image: string,
+    link: string,
+    place: string,
+    title: string,
 }
 
 const db = getFirestore(app);
@@ -71,126 +77,224 @@ const eventsRef = db.collection("event");
 const eventsSnapshot = await eventsRef.get();
 
 const events = eventsSnapshot.docs.map((doc) => ({
-	id: doc.id,
-	...doc.data(),
+    id: doc.id,
+    ...doc.data(),
 })) as Event[];
-
 ---
 
-<Layout title="Green Skills - Votre partenaire emploi" description='Sensibilisation, découverte et orientation des demandeurs d’emploi vers les nouveaux métiers de la transition écologique.'>
+<Layout title="Green Skills - Votre partenaire emploi"
+        description='Sensibilisation, découverte et orientation des demandeurs d’emploi vers les nouveaux métiers de la transition écologique.'>
 
-<Header title="Votre partenaire emploi" description="Face aux enjeux liés à la transition énergétique et aux besoins en main d'œuvre qualifiée des entreprises, <strong>Green Skills est un programme de sensibilisation, de découverte et d’orientation</strong> de demandeurs d’emploi vers les nouveaux métiers verts." href='#step-form' textCta='En savoir plus' />
+    <Header title="Votre partenaire emploi"
+            description="Face aux enjeux liés à la transition énergétique et aux besoins en main d'œuvre qualifiée des entreprises, <strong>Green Skills est un programme de sensibilisation, de découverte et d’orientation</strong> de demandeurs d’emploi vers les nouveaux métiers verts."
+            href='#step-form' textCta='En savoir plus'/>
 
-<section id="who-whe-are" class="margin-block relative pb-[var(--blocks-gap)]">
-	<Image src={alveoles} alt="image de l'équipe" class="absolute bottom-0 right-0 z-0" />
-	<div class="container">
-		<h2 class="text-center text-black text-3xl font-finalSixBlack mb-5">Green Skills</h2>
-		<h3 class="mb-[var(--blocks-gap-demi)] lg:w-9/12 lg:mx-auto font-finalSixMedium text-2xl text-center"> est un programme qui répond aux besoins en recrutement
-			sur ces nouveaux métiers en pleine transformation.</h3>
-		<div class="content space-y-8 lg:space-y-0 lg:flex lg:items-center lg:gap-14">
+    <section id="who-whe-are" class="margin-block relative pb-[var(--blocks-gap)]">
+        <Image src={alveoles} alt="image de l'équipe" class="absolute bottom-0 right-0 z-0"/>
+        <div class="container">
+            <h2 class="text-center text-black text-3xl font-finalSixBlack mb-5">Green Skills</h2>
+            <h3 class="mb-[var(--blocks-gap-demi)] lg:w-9/12 lg:mx-auto font-finalSixMedium text-2xl text-center"> est
+                un programme qui répond aux besoins en recrutement
+                sur ces nouveaux métiers en pleine transformation.</h3>
+            <div class="content space-y-8 lg:space-y-0 lg:flex lg:items-center lg:gap-14">
 
-			<div class="lg:flex-[2_2_0%] h-[365px]">
-				<Image src={team} alt="image de l'équipe" class=" drop-shadow-lg z-10 h-full w-full object-cover object-center rounded-xl" />
-			</div>
+                <div class="lg:flex-[2_2_0%] h-[365px]">
+                    <Image src={team} alt="image de l'équipe"
+                           class=" drop-shadow-lg z-10 h-full w-full object-cover object-center rounded-xl"/>
+                </div>
 
-			<div class="lg:flex-[5_5_0%] lg:space-y-0 relative z-10">
-				<InfosBloc image={bag}
-							title="Les métiers verts éligibles au FTJ Green Skills" list={list1}
-				/>
-				<InfosBloc image={flash}
-							title="Notre périmètre géographique" list={list2}
-				/>
-			</div>
-		</div>
+                <div class="lg:flex-[5_5_0%] lg:space-y-0 relative z-10">
+                    <InfosBloc image={bag}
+                               title="Les métiers verts éligibles au FTJ Green Skills" list={list1}
+                    />
+                    <InfosBloc image={flash}
+                               title="Notre périmètre géographique" list={list2}
+                    />
+                </div>
+            </div>
 
-		<BlocProgram picto={pictoLight} title='Au programme...' list={listProgram} />
-	</div>
-</section>
+            <BlocProgram picto={pictoLight} title='Au programme...' list={listProgram}/>
+        </div>
+    </section>
 
-<section class="bg-[#F7F7F7] py-[var(--blocks-gap)]">
-	<div class="container">
-		<h2 class=" text-green text-3xl font-finalSixBlack mb-[var(--blocks-gap-demi)]">Les chiffres clés</h2>
-		<Kpi />
-	</div>
-</section>
+    <section class="bg-[#F7F7F7] py-[var(--blocks-gap)]">
+        <div class="container">
+            <h2 class=" text-green text-3xl font-finalSixBlack mb-[var(--blocks-gap-demi)] text-center lg:text-left">Les
+                chiffres clés</h2>
+            <Kpi/>
+        </div>
+    </section>
 
-<StepForm />
+    <section id="needs" class="py-[var(--blocks-gap)] text-center lg:text-left">
+        <div class="container">
+            <h2 class=" text-black text-3xl font-finalSixBlack mb-[var(--blocks-gap-demi)]">Besoin d'un emploi ou envie
+                de recruter ?</h2>
 
-	<!--container lg:flex lg:items-center lg:gap-20 space-y-8 lg:space-y-0 pb-[var(&#45;&#45;blocks-gap)]-->
-<section id="event" class="margin-block container relative">
-	<div class="cursor-pointer btn-next absolute right-0 top-[50%] bottom-[50%] translate-x-[100%]"><svg class="btn-navigation-slider hover:text-white hover:bg-green p-2 border-[2px] border-green rounded-full" width="50px" height="50px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#00bf63"><path d="M9 6L15 12L9 18" stroke="#00bf63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
-	<div class="cursor-pointer btn-prev rotate-180 absolute left-0 top-[50%] bottom-[50%] translate-x-[-100%]"><svg class="btn-navigation-slider hover:text-white hover:bg-green p-2 border-[2px] border-green rounded-full" width="50px" height="50px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#00bf63"><path d="M9 6L15 12L9 18" stroke="#00bf63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
-	<h2 class="text-center text-black text-3xl font-finalSixBlack">Nos événements</h2>
-	<div class="swiper">
-		<div class="swiper-wrapper pt-[var(--blocks-gap-demi)] pb-[var(--blocks-gap)] pr-5">
-			<div class="swiper-slide">
-				<EventCard link="https://docs.google.com/forms/d/e/1FAIpQLScMl19PTpKKpGeG-E3wYEvfPM3n-0bwf9xLJ203xDAcAC5DfA/viewform" image={event1} date="13/11/2024" name="Rencontre Green Skills # 2 : L’électrolyse au service de l’énergie verte" place="Entreprise KEMONE à Fos sur Mer" description='8h30 - 12H30' delay="300" />
-			</div>
-			<div class="swiper-slide">
-				<EventCard link="https://forms.gle/mvZ7C2AtBmwz1fFJ8" image={event2} date="13/11/2024" name="Focus Métiers : Soudure" place="Épopée" description='Structures partenaires : RDF - AFPA -  MARSEA' delay="300" />
-			</div>
-			<div class="swiper-slide">
-				<EventCard link="https://forms.gle/AFnjaqqBTgxu8ywN9" image={event3} date="Plusieurs dates disponibles" name="Les ateliers d’accompagnement" place="Epopée" description='CV Motivationnel - Pitch & Posture en entretien - Réseautage vert Boost ton Linkedin - Gestion du stress' delay="300" />
-			</div>
-			<div class="swiper-slide">
-				<EventCard link="#step-form" image={event4} date="14/11/2024" name="Journée départementale de l’emploi" place="Hôtel du département" description='' delay="300" />
-			</div>
-			<div class="swiper-slide">
-				<EventCard link="https://forms.gle/jUmi3nvCdGjKSrD88" image={event5} date="du 18 au 22/11/24 et du 25 au 29/11/24" name="Les Rencontres Green Skills # 3 : FORINDUSTRIE" place="Épopée et Hors les Murs" description='9h30 - 16h30' delay="300" />
-			</div>
-			<div class="swiper-slide">
-				<EventCard link="https://forms.gle/Q1sydbPH5mv6zta59" image={event6} date=" 2,3 et 4 décembre 2024" name="Semaine thématique # 3 : Les métiers de l’énergie renouvelables avec DALKIA (groupe EDF)" place="Épopée" description='9h30 - 16h30 - Structures partenaires : DALKIA' delay="300" />
-			</div>
-			<div class="swiper-slide">
-				<EventCard link="https://forms.gle/qJ9AqsSH7mJcy2K17" image={event7} date="06/12/2024" name="Rencontre Green Skills # 4 – Sensibilisation à la transition écologique " place="Centre Social Romain Rolland" description='Structures partenaires :  RDF' delay="300" />
-			</div>
-			<div class="swiper-slide">
-				<EventCard link="https://forms.gle/kw6EFqVnitur8niW9" image={event8} date="12/12/2024" name="Rencontre Green Skills # 5 : L’économie circulaire" place="Épopée" description='9h30 - 16h30' delay="300" />
-			</div>
+            <div class="lg:flex gap-10">
+                <div class="flex-1">
+                    <Image src={event11} alt="recruteurs greenskills"
+                           class="drop-shadow-lg h-full w-full object-cover object-center rounded-xl"/>
+                </div>
+                <div class="content space-y-6 mt-6 lg:mt-0 flex-[2.5_2.5_0%]">
+                    <p class="font-finalSixBook text-left">👉 Demandeurs d’emploi : Contactez l’un de nos révélateurs de
+                        talents pour
+                        vous accompagner dans votre recherche et découvrir des opportunités dans les métiers verts en
+                        pleine croissance.</p>
+                    <p class="font-finalSixBook text-left">👉 Entreprises : Si vous souhaitez vous engager dans la
+                        transition écologique
+                        et recruter des talents, contactez Julien pour construire ensemble des solutions adaptées à vos
+                        besoins.</p>
+                    <p class="font-finalSixBold text-left">Nous sommes là pour connecter les talents et les entreprises
+                        au service d’un avenir durable !</p>
+
+                    <hr class="border-green">
+
+                    <div>
+                        <p class="mb-6 text-left font-finalSixBold">📨 Contactez-nous dès maintenant !</p>
+                        <p class="mb-2 text-left font-finalSixBook"><span
+                                class="font-finalSixBold">Contact talent</span> : Sarhaline - <a
+                                class="underline text-green" href="tel:0625604375">0625604375</a> / Ledhia - <a
+                                class="underline text-green" href="tel:0769164228">0769164228</a></p>
+                        <p class="text-left font-finalSixBook"><span class="font-finalSixBold">Contact entreprise</span>
+                            : Julien - <a class="underline text-green" href="tel:0776119949">0776119949</a> / Mélanie -
+                            <a class="underline text-green" href="tel:0777382360">0777382360</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <StepForm/>
+
+    <!--container lg:flex lg:items-center lg:gap-20 space-y-8 lg:space-y-0 pb-[var(&#45;&#45;blocks-gap)]-->
+    <section id="event" class="margin-block container relative">
+        <div class="cursor-pointer btn-next absolute right-0 top-[50%] bottom-[50%] translate-x-[100%]">
+            <svg class="btn-navigation-slider hover:text-white hover:bg-green p-2 border-[2px] border-green rounded-full"
+                 width="50px" height="50px" stroke-width="2" viewBox="0 0 24 24" fill="none"
+                 xmlns="http://www.w3.org/2000/svg" color="#00bf63">
+                <path d="M9 6L15 12L9 18" stroke="#00bf63" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+            </svg>
+        </div>
+        <div class="cursor-pointer btn-prev rotate-180 absolute left-0 top-[50%] bottom-[50%] translate-x-[-100%]">
+            <svg class="btn-navigation-slider hover:text-white hover:bg-green p-2 border-[2px] border-green rounded-full"
+                 width="50px" height="50px" stroke-width="2" viewBox="0 0 24 24" fill="none"
+                 xmlns="http://www.w3.org/2000/svg" color="#00bf63">
+                <path d="M9 6L15 12L9 18" stroke="#00bf63" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+            </svg>
+        </div>
+        <h2 class="text-center text-black text-3xl font-finalSixBlack">Nos événements</h2>
+        <div class="swiper">
+            <div class="swiper-wrapper pt-[var(--blocks-gap-demi)] pb-[var(--blocks-gap)] pr-5">
+                <div class="swiper-slide">
+                    <EventCard
+                            link=" https://docs.google.com/forms/d/e/1FAIpQLScw2lIYMqjttnotXVa7q-Hbu0-tzNAdkZshUSJBjyLOkTj7ow/viewform"
+                            image={event9} date="Du 21 au 24 janvier 2025" name="Semaine thématique #4 - Le recyclage"
+                            place="Épopée"
+                            description='Visite le centre de tri de Suez et participe à nos Recrut Game pour décrocher un emploi dans le secteur du recyclage'
+                            delay="300"/>
+                </div>
+                <div class="swiper-slide">
+                    <EventCard
+                            link="https://docs.google.com/forms/d/e/1FAIpQLSeH_vA7sck-_j7wNfQQ90MQuSI7Je_D4Sd6p2fwfuGs1o7u0g/viewform"
+                            image={event10} date="Plusieurs dates possibles" name="Les ateliers d’accompagnement"
+                            place="Épopée"
+                            description='Maximisez vos chances de succès sur le marché du travail grâce à nos ateliers : Rebondir après un non, Crée ton kit de candidature, Posture professionnelle en entretien, Gestion du stress, CV motivationnel & Pitch, Boost ton LinkedIn'
+                            delay="300"/>
+                </div>
+                <div class="swiper-slide">
+                    <EventCard
+                            link="https://docs.google.com/forms/d/e/1FAIpQLSdg-wU0Yz-Pj4xSeLLuifl6XoTySEMD9BlHZORabskEf6FAfA/viewform"
+                            image={event12} date="Le 13 février 2025"
+                            name="Économie circulaire - concept et initiatives locales"
+                            place="Épopée"
+                            description='Comprendre les rouages de l’économie circulaire, la revalorisation des objets avec la Ressourcerie des futurs et la visite des locaux de Ici Marseille, le 1er réseau de manufactures partagés, collaboratives et solidaires'
+                            delay="300"/>
+                </div>
+                <!--<div class="swiper-slide">-->
+                <!--    <EventCard-->
+                <!--            link=""-->
+                <!--            image={event11} date="Plusieurs dates possibles"-->
+                <!--            name="Besoin d'un emploi ou envie de recruter ?"-->
+                <!--            place="Épopée"-->
+                <!--            description='👉 Demandeurs d’emploi : Contactez l’un de nos révélateurs de talents pour vous accompagner dans votre recherche et découvrir des opportunités dans les métiers verts en pleine croissance. <br> 📨 Contactez-nous dès maintenant ! <br> Lien téléphone talent : Contact talent : sarhaline - 0625604375 / ledhia - 0769164228'-->
+                <!--            delay="300"/>-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                <!--	<EventCard link="https://forms.gle/mvZ7C2AtBmwz1fFJ8" image={event2} date="13/11/2024" name="Focus Métiers : Soudure" place="Épopée" description='Structures partenaires : RDF - AFPA -  MARSEA' delay="300" />-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                <!--	<EventCard link="https://forms.gle/AFnjaqqBTgxu8ywN9" image={event3} date="Plusieurs dates disponibles" name="Les ateliers d’accompagnement" place="Epopée" description='CV Motivationnel - Pitch & Posture en entretien - Réseautage vert Boost ton Linkedin - Gestion du stress' delay="300" />-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                <!--	<EventCard link="#step-form" image={event4} date="14/11/2024" name="Journée départementale de l’emploi" place="Hôtel du département" description='' delay="300" />-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                <!--	<EventCard link="https://forms.gle/jUmi3nvCdGjKSrD88" image={event5} date="du 18 au 22/11/24 et du 25 au 29/11/24" name="Les Rencontres Green Skills # 3 : FORINDUSTRIE" place="Épopée et Hors les Murs" description='9h30 - 16h30' delay="300" />-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                <!--	<EventCard link="https://forms.gle/Q1sydbPH5mv6zta59" image={event6} date=" 2,3 et 4 décembre 2024" name="Semaine thématique # 3 : Les métiers de l’énergie renouvelables avec DALKIA (groupe EDF)" place="Épopée" description='9h30 - 16h30 - Structures partenaires : DALKIA' delay="300" />-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                <!--	<EventCard link="https://forms.gle/qJ9AqsSH7mJcy2K17" image={event7} date="06/12/2024" name="Rencontre Green Skills # 4 – Sensibilisation à la transition écologique " place="Centre Social Romain Rolland" description='Structures partenaires :  RDF' delay="300" />-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                <!--	<EventCard link="https://forms.gle/kw6EFqVnitur8niW9" image={event8} date="12/12/2024" name="Rencontre Green Skills # 5 : L’économie circulaire" place="Épopée" description='9h30 - 16h30' delay="300" />-->
+                <!--</div>-->
 
 
-		</div>
-	</div>
-</section>
+            </div>
+            <div class="swiper-pagination !bottom-[5%]"></div>
+        </div>
+    </section>
 
-<Band pdf={pdf} title="Envie d\'en savoir plus ?" btnText='Télécharger la plaquette' bgImage={band}/>
+    <Band pdf={pdf} title="Envie d\'en savoir plus ?" btnText='Télécharger la plaquette' bgImage={band}/>
 
-<section id="support" class="margin-block overflow-hidden">
-	<div>
-		<h2 class="text-center text-black text-3xl font-finalSixBlack mb-[var(--blocks-gap-demi)] container">Projet porté et soutenu par</h2>
-		<Partners />
-	</div>
-</section>
-	
+    <section id="support" class="margin-block overflow-hidden">
+        <div>
+            <h2 class="text-center text-black text-3xl font-finalSixBlack mb-[var(--blocks-gap-demi)] container">Projet
+                porté et soutenu par</h2>
+            <Partners/>
+        </div>
+    </section>
+
 </Layout>
 
 <script>
-	import Swiper from 'swiper';
-	import { Navigation } from 'swiper/modules';
-	import 'swiper/css';
+    import Swiper from 'swiper';
+    import {Navigation, Pagination} from 'swiper/modules';
+    import 'swiper/css';
+    import 'swiper/css/pagination';
 
-	const swiper = new Swiper('.swiper', {
-		// Optional parameters
-		modules: [Navigation],
-		slidesPerView : 1.2,
-		spaceBetween: 40,
-		breakpoints : {
-			768 : {
-				slidesPerView : 2,
-			},
-			1024 : {
-				slidesPerView : 3,
-				spaceBetween: 80,
-			}
-		},
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        modules: [Navigation, Pagination],
+        slidesPerView: 1.2,
+        spaceBetween: 40,
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 80,
+            }
+        },
 
-		// Navigation arrows
-		navigation: {
-			nextEl: '.btn-next',
-			prevEl: '.btn-prev',
-		},
+        // Navigation arrows
+        navigation: {
+            nextEl: '.btn-next',
+            prevEl: '.btn-prev',
+        },
 
-	});
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+    });
 
 </script>
 

@@ -25,7 +25,7 @@ const { image, date, name, description, place, delay, link } = Astro.props;
                 {date}
             </div>
             <h4 class="font-finalSixHeavy text-2xl">{name}</h4>
-            <p class="text-md">{description}</p>
+            <p class="text-md" set:html={description} />
             <p class=" text-green">📍 {place} </p>
         </div>
 
