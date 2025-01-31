@@ -22,20 +22,18 @@ import Partners from '../components/Partners.astro';
 
 // img events
 
-import event1 from '../images/card_event/event1.jpg'
-import event2 from '../images/card_event/event2.jpg'
-import event3 from '../images/card_event/event3.jpg'
-import event4 from '../images/card_event/event4.jpg'
-import event5 from '../images/card_event/event5.jpg'
-import event6 from '../images/card_event/event6.jpg'
-import event7 from '../images/card_event/event7.jpg'
-import event8 from '../images/card_event/event8.jpg'
 import event9 from '../images/card_event/event-recyclage-greenskills.png'
 import event10 from '../images/card_event/les-ateliers-d-accompagnement.jpg'
 import event11 from '../images/card_event/recruteur.jpg'
 import event12 from '../images/card_event/ici_marseille.png.jpg'
 
-
+import eventBoostLinkedin from '../images/card_event/atelier-boost-ton-linkedIn.png';
+import eventStress from '../images/card_event/atelier-gestion-du-stress.png'
+import eventCv from '../images/card_event/Atelier-CV-motivationnel.png';
+import eventRenovation from '../images/card_event/Focus-Métiers--Chef-de-projets-rénovation-énergétique.jpg';
+import eventElectrician from '../images/card_event/Focus-Métiers--Électricien-d’avenir.jpg';
+import eventCandidate from '../images/card_event/Journée-candidature.jpg';
+import eventWeekTheme from '../images/card_event/semaine-thematique-mode-eco-responsable.jpg';
 
 
 import pictoLight from '../images/pictos/picto_light.svg';
@@ -190,18 +188,28 @@ const events = eventsSnapshot.docs.map((doc) => ({
             <div class="swiper-wrapper pt-[var(--blocks-gap-demi)] pb-[var(--blocks-gap)] pr-5">
                 <div class="swiper-slide">
                     <EventCard
-                            link=" https://docs.google.com/forms/d/e/1FAIpQLScw2lIYMqjttnotXVa7q-Hbu0-tzNAdkZshUSJBjyLOkTj7ow/viewform"
-                            image={event9} date="Du 21 au 24 janvier 2025" name="Semaine thématique #4 - Le recyclage"
+                            link="https://docs.google.com/forms/d/e/1FAIpQLSeH_vA7sck-_j7wNfQQ90MQuSI7Je_D4Sd6p2fwfuGs1o7u0g/viewform"
+                            image={event10} date="Plusieurs dates possibles" name="Les ateliers d’accompagnement"
                             place="Épopée"
-                            description='Visite le centre de tri de Suez et participe à nos Recrut Game pour décrocher un emploi dans le secteur du recyclage'
+                            description='Maximisez vos chances de succès sur le marché du travail grâce à nos ateliers : Rebondir après un non, Crée ton kit de candidature, Posture professionnelle en entretien, Gestion du stress, CV motivationnel & Pitch, Boost ton LinkedIn'
                             delay="300"/>
                 </div>
                 <div class="swiper-slide">
                     <EventCard
                             link="https://docs.google.com/forms/d/e/1FAIpQLSeH_vA7sck-_j7wNfQQ90MQuSI7Je_D4Sd6p2fwfuGs1o7u0g/viewform"
-                            image={event10} date="Plusieurs dates possibles" name="Les ateliers d’accompagnement"
+                            image={eventStress} date="Le 5 février 2025"
+                            name="Atelier Gestion du stress"
                             place="Épopée"
-                            description='Maximisez vos chances de succès sur le marché du travail grâce à nos ateliers : Rebondir après un non, Crée ton kit de candidature, Posture professionnelle en entretien, Gestion du stress, CV motivationnel & Pitch, Boost ton LinkedIn'
+                            description='Apprends à mieux gérer la pression et à rester serein(e) en toutes circonstances.'
+                            delay="300"/>
+                </div>
+                <div class="swiper-slide">
+                    <EventCard
+                            link="https://docs.google.com/forms/d/e/1FAIpQLSeH_vA7sck-_j7wNfQQ90MQuSI7Je_D4Sd6p2fwfuGs1o7u0g/viewform"
+                            image={eventCandidate} date="Le 11 février 2025"
+                            name="Journée candidature"
+                            place="Épopée"
+                            description='Matin | CV & Lettre de motivation – Optimise ton dossier pour attirer les recruteurs. <br> Après-midi | Posture pro & Entretien – Travaille ton aisance et ton impact en face-à-face.'
                             delay="300"/>
                 </div>
                 <div class="swiper-slide">
@@ -213,37 +221,51 @@ const events = eventsSnapshot.docs.map((doc) => ({
                             description='Comprendre les rouages de l’économie circulaire, la revalorisation des objets avec la Ressourcerie des futurs et la visite des locaux de Ici Marseille, le 1er réseau de manufactures partagés, collaboratives et solidaires'
                             delay="300"/>
                 </div>
-                <!--<div class="swiper-slide">-->
-                <!--    <EventCard-->
-                <!--            link=""-->
-                <!--            image={event11} date="Plusieurs dates possibles"-->
-                <!--            name="Besoin d'un emploi ou envie de recruter ?"-->
-                <!--            place="Épopée"-->
-                <!--            description='👉 Demandeurs d’emploi : Contactez l’un de nos révélateurs de talents pour vous accompagner dans votre recherche et découvrir des opportunités dans les métiers verts en pleine croissance. <br> 📨 Contactez-nous dès maintenant ! <br> Lien téléphone talent : Contact talent : sarhaline - 0625604375 / ledhia - 0769164228'-->
-                <!--            delay="300"/>-->
-                <!--</div>-->
-                <!--<div class="swiper-slide">-->
-                <!--	<EventCard link="https://forms.gle/mvZ7C2AtBmwz1fFJ8" image={event2} date="13/11/2024" name="Focus Métiers : Soudure" place="Épopée" description='Structures partenaires : RDF - AFPA -  MARSEA' delay="300" />-->
-                <!--</div>-->
-                <!--<div class="swiper-slide">-->
-                <!--	<EventCard link="https://forms.gle/AFnjaqqBTgxu8ywN9" image={event3} date="Plusieurs dates disponibles" name="Les ateliers d’accompagnement" place="Epopée" description='CV Motivationnel - Pitch & Posture en entretien - Réseautage vert Boost ton Linkedin - Gestion du stress' delay="300" />-->
-                <!--</div>-->
-                <!--<div class="swiper-slide">-->
-                <!--	<EventCard link="#step-form" image={event4} date="14/11/2024" name="Journée départementale de l’emploi" place="Hôtel du département" description='' delay="300" />-->
-                <!--</div>-->
-                <!--<div class="swiper-slide">-->
-                <!--	<EventCard link="https://forms.gle/jUmi3nvCdGjKSrD88" image={event5} date="du 18 au 22/11/24 et du 25 au 29/11/24" name="Les Rencontres Green Skills # 3 : FORINDUSTRIE" place="Épopée et Hors les Murs" description='9h30 - 16h30' delay="300" />-->
-                <!--</div>-->
-                <!--<div class="swiper-slide">-->
-                <!--	<EventCard link="https://forms.gle/Q1sydbPH5mv6zta59" image={event6} date=" 2,3 et 4 décembre 2024" name="Semaine thématique # 3 : Les métiers de l’énergie renouvelables avec DALKIA (groupe EDF)" place="Épopée" description='9h30 - 16h30 - Structures partenaires : DALKIA' delay="300" />-->
-                <!--</div>-->
-                <!--<div class="swiper-slide">-->
-                <!--	<EventCard link="https://forms.gle/qJ9AqsSH7mJcy2K17" image={event7} date="06/12/2024" name="Rencontre Green Skills # 4 – Sensibilisation à la transition écologique " place="Centre Social Romain Rolland" description='Structures partenaires :  RDF' delay="300" />-->
-                <!--</div>-->
-                <!--<div class="swiper-slide">-->
-                <!--	<EventCard link="https://forms.gle/kw6EFqVnitur8niW9" image={event8} date="12/12/2024" name="Rencontre Green Skills # 5 : L’économie circulaire" place="Épopée" description='9h30 - 16h30' delay="300" />-->
-                <!--</div>-->
-
+                <div class="swiper-slide">
+                    <EventCard
+                            link="https://docs.google.com/forms/d/e/1FAIpQLSeH_vA7sck-_j7wNfQQ90MQuSI7Je_D4Sd6p2fwfuGs1o7u0g/viewform"
+                            image={eventCv} date="Le 18 février 2025"
+                            name="Atelier CV motivationnel"
+                            place="Épopée"
+                            description='Mets en avant tes compétences et expériences avec un CV qui fait la différence.'
+                            delay="300"/>
+                </div>
+                <div class="swiper-slide">
+                    <EventCard
+                            link="https://docs.google.com/forms/d/e/1FAIpQLSd1s8_WveUEMV6AEAt1MlbNp1hXg8vkZYe5PZDLQl9APTyDFg/viewform?pli=1"
+                            image={eventElectrician} date="Le 20 février 2025"
+                            name="Focus Métiers : Électricien d’avenir"
+                            place="Dual Sun Académie"
+                            description='Découvre les formations et débouchés du secteur électrique avec Dual Sun Académie.'
+                            delay="300"/>
+                </div>
+                <div class="swiper-slide">
+                    <EventCard
+                            link=" https://docs.google.com/forms/d/e/1FAIpQLSdTQNuyXSiQQSeHeONF1fHlWW8oj9JJ2t0QS-JlEqVwen9msA/viewform"
+                            image={eventWeekTheme} date="Du 24 au 28 février 2025"
+                            name="Semaine thématique #5 : Mode éco-responsable"
+                            place=" L’Épopée"
+                            description='Conférences, formations & rencontres autour des métiers et initiatives locales d’une mode durable.'
+                            delay="300"/>
+                </div>
+                <div class="swiper-slide">
+                    <EventCard
+                            link=" https://docs.google.com/forms/d/e/1FAIpQLSeH_vA7sck-_j7wNfQQ90MQuSI7Je_D4Sd6p2fwfuGs1o7u0g/viewform"
+                            image={eventBoostLinkedin} date="4 mars 2025"
+                            name="Atelier Boost ton LinkedIn"
+                            place=" L’Épopée"
+                            description='Apprends à optimiser ton profil et ton réseau pour attirer les bonnes opportunités.'
+                            delay="300"/>
+                </div>
+                <div class="swiper-slide">
+                    <EventCard
+                            link="#step-form"
+                            image={eventRenovation} date="6 mars 2025"
+                            name="Focus Métiers : Chef de projets rénovation énergétique"
+                            place=" L’Épopée"
+                            description='Découvrez ce métier d’avenir et les formations pour y accéder avec La Solive.'
+                            delay="300"/>
+                </div>
 
             </div>
             <div class="swiper-pagination !bottom-[5%]"></div>
