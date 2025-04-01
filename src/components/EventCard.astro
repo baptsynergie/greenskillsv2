@@ -2,8 +2,8 @@
 import { Image } from 'astro:assets';
 
 interface Props {
-	image: ImageMetadata;
-	date: string;
+	image: string;
+	date: Date;
 	name: string;
     description: string;
     place: string;
@@ -18,7 +18,8 @@ const { image, date, name, description, place, delay, link } = Astro.props;
 <a class="block flex-1 h-full" href={link}  data-aos="fade-up" data-aos-delay={delay} onclick="lenis.scrollTo('#step-form')">
     <div class="flex-1 shadow-lg h-full rounded-xl transition-all">
         <div class="h-[200px]">
-            <Image src={image} alt="image évenement green skills" class="w-full h-full object-cover object-center rounded-t-xl" />
+            <img src={import.meta.env.STRAPI_URL + image.url} class="w-full h-full object-cover object-center rounded-t-xl" alt="image évenement green skills" />
+            <!--<img src={image} alt="image évenement green skills" class="w-full h-full object-cover object-center rounded-t-xl"/>-->
         </div>
         <div class="p-5 flex flex-col gap-2">
             <div class="bg-green text-white p-2 w-fit rounded-lg font-finalSixMedium">

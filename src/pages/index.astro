@@ -4,8 +4,14 @@ import Header from '../components/Header.astro';
 import Band from '../components/Band.astro';
 import InfosBloc from '../components/InfosBloc.astro';
 import {Image} from 'astro:assets';
-import {app} from "../firebase/server";
-import {getFirestore} from "firebase-admin/firestore";
+
+import fetchApi from "../lib/strapi";
+import type Event from "../interfaces/event";
+
+const events = await fetchApi<Event[]>({
+    endpoint: 'events?populate=image', // le type de contenu à récupérer
+    wrappedByKey: 'data', // la clé pour décapsuler la réponse
+});
 
 import picto1 from '../images/pictos/picto_green1.svg';
 import alveoles from '../images/pictos/alveoles.svg';
@@ -61,24 +67,6 @@ const listProgram = [
     'Immersions, découverte des entreprises et de leurs métiers, événements de recrutements ludiques',
 ]
 
-interface Event {
-    id: string,
-    date: string,
-    hours: string,
-    image: string,
-    link: string,
-    place: string,
-    title: string,
-}
-
-const db = getFirestore(app);
-const eventsRef = db.collection("event");
-const eventsSnapshot = await eventsRef.get();
-
-const events = eventsSnapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-})) as Event[];
 ---
 
 <Layout title="Green Skills - Votre partenaire emploi"
@@ -166,6 +154,7 @@ const events = eventsSnapshot.docs.map((doc) => ({
 
     <StepForm/>
 
+
     <!--container lg:flex lg:items-center lg:gap-20 space-y-8 lg:space-y-0 pb-[var(&#45;&#45;blocks-gap)]-->
     <section id="event" class="margin-block container relative">
         <div class="cursor-pointer btn-next absolute right-0 top-[50%] bottom-[50%] translate-x-[100%]">
@@ -187,77 +176,20 @@ const events = eventsSnapshot.docs.map((doc) => ({
         <h2 class="text-center text-black text-3xl font-finalSixBlack">Nos événements</h2>
         <div class="swiper">
             <div class="swiper-wrapper pt-[var(--blocks-gap-demi)] pb-[var(--blocks-gap)] pr-5">
-                <div class="swiper-slide">
-                    <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSeH_vA7sck-_j7wNfQQ90MQuSI7Je_D4Sd6p2fwfuGs1o7u0g/viewform"
-                            image={event10} date="Plusieurs dates possibles" name="Les ateliers d’accompagnement"
-                            place="Épopée"
-                            description='Maximisez vos chances de succès sur le marché du travail grâce à nos ateliers : Rebondir après un non, Crée ton kit de candidature, Posture professionnelle en entretien, Gestion du stress, CV motivationnel & Pitch, Boost ton LinkedIn'
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link=" https://docs.google.com/forms/d/e/1FAIpQLSeH_vA7sck-_j7wNfQQ90MQuSI7Je_D4Sd6p2fwfuGs1o7u0g/viewform"
-                            image={eventBoostLinkedin} date="3 mars 2025"
-                            name="Atelier Boost ton LinkedIn"
-                            place=" L’Épopée"
-                            description='Apprends à optimiser ton profil et ton réseau pour attirer les bonnes opportunités.'
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSdo2HT93Ueby7vUcKAqNKChXh6GmPQ8tLH_FDwKn9BndtG57A/viewform"
-                            image={eventRenovation} date="6 mars 2025"
-                            name="Focus Métiers : Chef de projets rénovation énergétique"
-                            place="L’Épopée"
-                            description='Découvrez ce métier d’avenir et les formations pour y accéder avec La Solive.'
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link=" https://docs.google.com/forms/d/e/1FAIpQLSduLn2TBLCb-vXGebyq3bIqVjRHVBF3WX_WhDPRBk9fb2qM1w/viewform"
-                            image={eventRebondir} date="12 mars 2025"
-                            name="Savoir rebondir"
-                            place="L’Épopée - de 14h à 16h"
-                            description='Transformer les refus en opportunités en comprenant vos émotions et en développant des conseils pour rebondir, accepter et mieux avancer.'
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link=" https://docs.google.com/forms/d/e/1FAIpQLSdeCuYQ4deWmOLrUEZ-Q9AoPpjXapZKJWDhCjuNUOpg9_8gvQ/viewform"
-                            image={eventMaritime} date="13 mars 2025"
-                            name="Rencontre Green Skills #7 : Métiers du port et de demain"
-                            place="Gare maritime de la Major, Boulevard Jacques Saadé 13002 Marseille"
-                            description='Découvrez les métiers du port, les opportunités d’avenir dans ce secteur stratégique et visitez le Port Center de Marseille.'
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSdPW-vVOMl76jEk81sy71yGsDIPQ7RApCUmbjKlCBSD9v89jQ/viewform"
-                            image={eventRencontre} date="18 mars 2025"
-                            name="Rencontre Inspirante #8 : De la fast fashion à la mode éthique"
-                            place="Epopée"
-                            description="Découvre l'upcycling et rencontre une figure inspirante de la mode durable : Marion Lopez, directrice du Studio Lausié, une école de mode écoresponsable sur Marseille - Rencontre Green Skills X Le Spot."
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link=" https://docs.google.com/forms/d/e/1FAIpQLSduLn2TBLCb-vXGebyq3bIqVjRHVBF3WX_WhDPRBk9fb2qM1w/viewform"
-                            image={eventCollab} date="21 mars 2025"
-                            name="Mieux communiquer pour mieux collaborer"
-                            place="L’Épopée - de 10h à 12h30"
-                            description="Aborder les notions de communication et plus précisément de communication non violente pour renforcer la coopération, la compréhension mutuelle et l'efficacité au sein d'une équipe."
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link=" https://docs.google.com/forms/d/e/1FAIpQLSduLn2TBLCb-vXGebyq3bIqVjRHVBF3WX_WhDPRBk9fb2qM1w/viewform"
-                            image={eventCv} date="25 mars 2025"
-                            name="CV motivationnel et pitch"
-                            place="L’Épopée - de 14h à 16h"
-                            description="Découvrir un outil qui permet de mettre en valeur vos compétences douces afin d'enrichir votre présentation et comprendre comment adopter une attitude attractive en ayant un discours accrocheur."
-                            delay="300"/>
-                </div>
+                {
+                    events.map((event) => (
+                            <div class="swiper-slide">
+                                <EventCard
+                                        link={event.ctaLink}
+                                        image={event.image}
+                                        date={event.dateBegin}
+                                        name={event.title}
+                                        place={event.place}
+                                        description={event.description}
+                                        delay="300"/>
+                            </div>
+                    ))
+                }
 
             </div>
             <div class="swiper-pagination !bottom-[5%]"></div>
