@@ -43,6 +43,9 @@ import eventCv from '../images/card_event/image (14).png';
 import eventCirculaire from '../images/card_event/image (15).png';
 import eventRecruteur from '../images/card_event/image (16).png';
 import eventEntretien from '../images/card_event/image (17).png';
+import terre from '../images/card_event/terre.png';
+import smartphone from '../images/card_event/smartphone.png';
+import ordi from '../images/card_event/ordi.png';
 
 
 
@@ -198,85 +201,50 @@ const events = eventsSnapshot.docs.map((doc) => ({
             <div class="swiper-wrapper pt-[var(--blocks-gap-demi)] pb-[var(--blocks-gap)] pr-5">
                 <div class="swiper-slide">
                     <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSeeqAOPMd5f55b0RJ_9BSH9yIE-H0YTqIDEgAc2hK6-hsKVVA/viewform"
-                            image={eventSolaire} date="du 2 au 3 avril"
-                            name="Focus métier #5 - Électricien SOLAIRE"
-                            place=" L’Épopée village"
-                            description="Explorez les métiers de techniciens en photovoltaïque, une occasion unique de découvrir le métier d'électriciens d'avenirs et les formations proposées par le GRETA & l'Ecole Gustave."
+                            link="https://docs.google.com/forms/d/e/1FAIpQLSfY7esUK2-bYqviqID8UvHuayLanCOAmrJmdR_a1xsXY1T4kg/viewform"
+                            image={eventSolaire} date="Mercredi 28 Mai"
+                            name="Focus Métier #7 Ecole GUSTAVE"
+                            place="14 Rue Georges Picot, 13010 Marseille"
+                            description="Explore les métiers du bâtiment et de l'artisanat et découvre les formations CVC, Plomberie, Electricité, ..."
                             delay="300"/>
                 </div>
                 <div class="swiper-slide">
                     <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSf5ejprxceCyhV_42oC3CUWr7oLJNzHaKjVoq2dhICFsFlYsw/viewform"
-                            image={eventSolaire2} date="du 2 au 4 avril"
-                            name="Semaine thématique #6 - Les métiers du solaire"
-                            place="L’Épopée village"
-                            description="Découvre la filière du solaire, les métiers et les formations associées et visite également des plateaux techniques. Prépare-toi pour des entretiens via nos ateliers et trouve un job avec nos Recrut' Game ! "
+                            link="https://docs.google.com/forms/d/e/1FAIpQLSd1JHpcvM8emnwUGRIKsG-ZxJMB_E_EkpiP54G0P3eP_K0meQ/viewform"
+                            image={terre} date="Vendredi 23 Mai"
+                            name="Rencontre Green Skills #13 Les Alchimistes Provence"
+                            place="6 Rue Berthelot, 13014 Marseille"
+                            description="Visite l'entreprise sur la collecte & le compostage de Biodéchets et découvre les opportunités dans le secteur."
                             delay="300"/>
                 </div>
                 <div class="swiper-slide">
                     <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLScbXyS753mn2aZPDcIfdzcyypCgNIWHtnJYZusYbfL1TVPjUw/viewform"
-                            image={eventCollaboration} date="le 8 avril"
-                            name="Atelier Mieux communiquer pour mieux collaborer"
-                            place="L’Épopée village - de 10h à 11h30"
-                            description="Aborder les notions de communication et plus précisément de communication non violente pour renforcer la coopération, la compréhension mutuelle et l'efficacité au sein d'une équipe."
+                            link="https://docs.google.com/forms/d/e/1FAIpQLSe4HVdsUUbkItzjfeiFSyuebjNvwr7hGSMnFcbVUBRQV6j8Gw/viewform"
+                            image={smartphone} date="Vendredi 23 Mai"
+                            name="Ateliers BOULANGER - Réparation des téléphones smartphones"
+                            place="6 Rue Berthelot, 13014 Marseille"
+                            description="En collaboration avec l'entreprise Boulanger, viens participer à notre atelier sur la réparation des téléphones mobiles à l'Epopée."
                             delay="300"/>
                 </div>
                 <div class="swiper-slide">
                     <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSe9fxKJ-OV1nirIpkqZx8osutfepTaRzN5Puq2T0duxB_PHlg/viewform?pli=1"
-                            image={eventGravity} date="le 8 avril"
-                            name="Rencontre Green Skills #10 - GRAVITHY"
-                            place="L’Épopée village"
-                            description="Rencontre GravitHy, une entreprise spécialisée dans la production de fer décarboné, et son implantation locale. Découvrez les procédés de sidérurgie verte par réduction à l'hydrogène."
+                            link="https://docs.google.com/forms/d/e/1FAIpQLSe4HVdsUUbkItzjfeiFSyuebjNvwr7hGSMnFcbVUBRQV6j8Gw/viewform"
+                            image={smartphone} date="Jeudi 29 mai"
+                            name="Ateliers BOULANGER - Réparation d’ordinateurs"
+                            place="6 Rue Berthelot, 13014 Marseille"
+                            description="En collaboration avec l'entreprise Boulanger, viens participer à notre atelier sur la réparation des ordinateurs à l'Epopée."
                             delay="300"/>
                 </div>
                 <div class="swiper-slide">
                     <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSdRrHOOydfPjsN6OVE9EE8DHx9vNT8oE0Il1gd4SwahKk2OSw/viewform"
-                            image={eventDualSun} date="le 9 avril"
-                            name="Focus métier #6 - Rencontre avec Dualsun"
-                            place="DualSun Académie (15 Rue Marc Donadille, 13013 Marseille)"
-                            description="Une occasion unique de découvrir le métier d'électriciens d'avenirs et les formations proposées par DUAL SUN au sein de leurs locaux et de leurs plateaux techniques."
+                            link="https://docs.google.com/forms/d/e/1FAIpQLSdyWQ9mtFYQRZAbjUHomfHatqckgNUAWYloVdCFdyMvxqbHrQ/viewform"
+                            image={ordi} date="Mardi 27 mai"
+                            name="Rencontre Green Skills #14 - Provence TLC"
+                            place="2 rue de Vienne - 13127 Vitrolles"
+                            description="Provence TLC est une entreprise d'insertion basée au cœur de la Provence. Elle collecte, trie et revalorise les textiles. Viens visiter leur atelier !"
                             delay="300"/>
                 </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLScbXyS753mn2aZPDcIfdzcyypCgNIWHtnJYZusYbfL1TVPjUw/viewform"
-                            image={eventCv} date="le 17 avril"
-                            name="CV motivationnel & pitch"
-                            place="L’Épopée village - de 10h à 12h"
-                            description="Découvrir un outil qui permet de mettre en valeur vos compétences douces afin d'enrichir votre présentation et comprendre comment adopter une attitude attractive en ayant un discours accrocheur."
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSc5VqmG4HlaBLXXm4uJFhck9Xs2S9YFsBR6avr6u2bzMPZmUw/viewform"
-                            image={eventCirculaire} date="le 22 avril"
-                            name="Rencontre Green Skills #11 - Economie Circulaire"
-                            place="L’Épopée village - de 10h à 12h"
-                            description="Rencontre La Ressourcerie des Futurs, un chantier d'insertion sur l'économie circulaire au quotidien et réalise un atelier d’intelligence collective."
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLScbXyS753mn2aZPDcIfdzcyypCgNIWHtnJYZusYbfL1TVPjUw/viewform"
-                            image={eventCirculaire} date="le 24 avril"
-                            name="Atelier Réussir son entrée en relation avec un recruteur"
-                            place="L’Épopée village - de 10h à 12h"
-                            description="Connaître les conseils pratiques pour maîtriser les bases essentielles pour réussir un entretien, de la préparation à l'action."
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLScbXyS753mn2aZPDcIfdzcyypCgNIWHtnJYZusYbfL1TVPjUw/viewform"
-                            image={eventEntretien} date="le 29 avril"
-                            name="Atelier Simulation d'entretien d'embauche"
-                            place="L’Épopée village - de 13h à 15h"
-                            description="Atelier pratique qui permet aux talents de se mettre dans la peau d'un recruteur afin de mieux préparer leurs propres entretiens."
-                            delay="300"/>
-                </div>
+
 
             </div>
             <div class="swiper-pagination !bottom-[5%]"></div>
