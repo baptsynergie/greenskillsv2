@@ -46,6 +46,7 @@ import eventEntretien from '../images/card_event/image (17).png';
 import terre from '../images/card_event/terre.png';
 import smartphone from '../images/card_event/smartphone.png';
 import ordi from '../images/card_event/ordi.png';
+import lemonTri from '../images/card_event/lemon_tri.png';
 
 
 
@@ -201,15 +202,6 @@ const events = eventsSnapshot.docs.map((doc) => ({
             <div class="swiper-wrapper pt-[var(--blocks-gap-demi)] pb-[var(--blocks-gap)] pr-5">
                 <div class="swiper-slide">
                     <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSfY7esUK2-bYqviqID8UvHuayLanCOAmrJmdR_a1xsXY1T4kg/viewform"
-                            image={eventSolaire} date="Mercredi 28 Mai"
-                            name="Focus Métier #7 Ecole GUSTAVE"
-                            place="14 Rue Georges Picot, 13010 Marseille"
-                            description="Explore les métiers du bâtiment et de l'artisanat et découvre les formations CVC, Plomberie, Electricité, ..."
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
                             link="https://docs.google.com/forms/d/e/1FAIpQLSd1JHpcvM8emnwUGRIKsG-ZxJMB_E_EkpiP54G0P3eP_K0meQ/viewform"
                             image={terre} date="Vendredi 23 Mai"
                             name="Rencontre Green Skills #13 Les Alchimistes Provence"
@@ -219,29 +211,48 @@ const events = eventsSnapshot.docs.map((doc) => ({
                 </div>
                 <div class="swiper-slide">
                     <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSe4HVdsUUbkItzjfeiFSyuebjNvwr7hGSMnFcbVUBRQV6j8Gw/viewform"
-                            image={smartphone} date="Vendredi 23 Mai"
-                            name="Ateliers BOULANGER - Réparation des téléphones smartphones"
-                            place="6 Rue Berthelot, 13014 Marseille"
-                            description="En collaboration avec l'entreprise Boulanger, viens participer à notre atelier sur la réparation des téléphones mobiles à l'Epopée."
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSe4HVdsUUbkItzjfeiFSyuebjNvwr7hGSMnFcbVUBRQV6j8Gw/viewform"
-                            image={smartphone} date="Jeudi 29 mai"
-                            name="Ateliers BOULANGER - Réparation d’ordinateurs"
-                            place="6 Rue Berthelot, 13014 Marseille"
-                            description="En collaboration avec l'entreprise Boulanger, viens participer à notre atelier sur la réparation des ordinateurs à l'Epopée."
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
                             link="https://docs.google.com/forms/d/e/1FAIpQLSdyWQ9mtFYQRZAbjUHomfHatqckgNUAWYloVdCFdyMvxqbHrQ/viewform"
                             image={ordi} date="Mardi 27 mai"
                             name="Rencontre Green Skills #14 - Provence TLC"
                             place="2 rue de Vienne - 13127 Vitrolles"
                             description="Provence TLC est une entreprise d'insertion basée au cœur de la Provence. Elle collecte, trie et revalorise les textiles. Viens visiter leur atelier !"
+                            delay="300"/>
+                </div>
+                <div class="swiper-slide">
+                    <EventCard
+                            link="https://docs.google.com/forms/d/e/1FAIpQLSfY7esUK2-bYqviqID8UvHuayLanCOAmrJmdR_a1xsXY1T4kg/viewform"
+                            image={eventSolaire} date="Mercredi 28 Mai"
+                            name="Focus Métier #7 Ecole GUSTAVE"
+                            place="14 Rue Georges Picot, 13010 Marseille"
+                            description="Explore les métiers du bâtiment et de l'artisanat et découvre les formations CVC, Plomberie, Electricité, ..."
+                            delay="300"/>
+                </div>
+
+                <!--<div class="swiper-slide">-->
+                <!--    <EventCard-->
+                <!--            link="https://docs.google.com/forms/d/e/1FAIpQLSe4HVdsUUbkItzjfeiFSyuebjNvwr7hGSMnFcbVUBRQV6j8Gw/viewform"-->
+                <!--            image={smartphone} date="Vendredi 23 Mai"-->
+                <!--            name="Ateliers BOULANGER - Réparation des téléphones smartphones"-->
+                <!--            place="6 Rue Berthelot, 13014 Marseille"-->
+                <!--            description="En collaboration avec l'entreprise Boulanger, viens participer à notre atelier sur la réparation des téléphones mobiles à l'Epopée."-->
+                <!--            delay="300"/>-->
+                <!--</div>-->
+                <!--<div class="swiper-slide">-->
+                <!--    <EventCard-->
+                <!--            link="https://docs.google.com/forms/d/e/1FAIpQLSe4HVdsUUbkItzjfeiFSyuebjNvwr7hGSMnFcbVUBRQV6j8Gw/viewform"-->
+                <!--            image={smartphone} date="Jeudi 29 mai"-->
+                <!--            name="Ateliers BOULANGER - Réparation d’ordinateurs"-->
+                <!--            place="6 Rue Berthelot, 13014 Marseille"-->
+                <!--            description="En collaboration avec l'entreprise Boulanger, viens participer à notre atelier sur la réparation des ordinateurs à l'Epopée."-->
+                <!--            delay="300"/>-->
+                <!--</div>-->
+                <div class="swiper-slide">
+                    <EventCard
+                            link=" https://forms.gle/1FfsekTiNkA1ZmCw9"
+                            image={lemonTri} date="Mardi 3 juin"
+                            name="Rencontre Green Skills #15 - Lemon tri"
+                            place="48 boulevard Capitaine Gèze, 13014 Marseille"
+                            description="Visite du centre de tri de Lemon Tri. Cette entreprise s'engage contre l'incinération et l'enfouissement des déchets en proposant des solutions innovantes de tri, de recyclage et de réemploi."
                             delay="300"/>
                 </div>
 
