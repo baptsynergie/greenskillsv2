@@ -22,31 +22,14 @@ import Partners from '../components/Partners.astro';
 
 // img events
 
-
-import event10 from '../images/card_event/les-ateliers-d-accompagnement.jpg'
 import event11 from '../images/card_event/recruteur.jpg'
 
-
-import eventBoostLinkedin from '../images/card_event/atelier-boost-ton-linkedIn.png';
-import eventRenovation from '../images/card_event/Focus-Métiers--Chef-de-projets-rénovation-énergétique.jpg';
-import eventMaritime from '../images/card_event/image (9).png';
-import eventRencontre from '../images/card_event/image (10).png';
-import eventRebondir from '../images/card_event/rebondir.png';
-import eventCollab from '../images/card_event/mieux-communiquer.png'
-
 import eventSolaire from '../images/card_event/image (9).png';
-import eventSolaire2 from '../images/card_event/image (10).png';
-import eventCollaboration from '../images/card_event/image (11).png';
-import eventGravity from '../images/card_event/image (12).png';
-import eventDualSun from '../images/card_event/image (13).png';
-import eventCv from '../images/card_event/image (14).png';
-import eventCirculaire from '../images/card_event/image (15).png';
-import eventRecruteur from '../images/card_event/image (16).png';
-import eventEntretien from '../images/card_event/image (17).png';
 import terre from '../images/card_event/terre.png';
-import smartphone from '../images/card_event/smartphone.png';
 import ordi from '../images/card_event/ordi.png';
 import lemonTri from '../images/card_event/lemon_tri.png';
+import accompagnement from '../images/card_event/accompagnement.png';
+import solive from '../images/card_event/solive.png';
 
 
 
@@ -202,6 +185,24 @@ const events = eventsSnapshot.docs.map((doc) => ({
             <div class="swiper-wrapper pt-[var(--blocks-gap-demi)] pb-[var(--blocks-gap)] pr-5">
                 <div class="swiper-slide">
                     <EventCard
+                            link="https://docs.google.com/forms/d/e/1FAIpQLSd1zhkvGrrf06hyo_cUDhEYW7lYzfEPG_M42AXwtF_39lKjsA/viewform"
+                            image={accompagnement} date="jeudi 22 et mardi 27 mai"
+                            name="Ateliers d'accompagnement"
+                            place="6 Rue Berthelot, 13014 Marseille"
+                            description="Ces ateliers vous offrent des outils pratiques pour réussir dans votre recherche d'emploi comme réussir sa reconversion professionnelle, ou réaliser son CV classique et motivationnel."
+                            delay="300"/>
+                </div>
+                <div class="swiper-slide">
+                    <EventCard
+                            link="https://docs.google.com/forms/d/e/1FAIpQLScDih-fwN0iWeJC4YtQXyaNlc75vrJERybemwvTb7TEXVEhow/viewform"
+                            image={solive} date="Mercredi 21 mai"
+                            name="Focus métier # 7 - Centre de formation La solive"
+                            place="6 rue Joseph BAGGIA 13003 MARSEILLE"
+                            description="Visite des locaux de la Solive, et présentation des formations d'avenir dans la transition écologique et la rénovation du bâtiment."
+                            delay="300"/>
+                </div>
+                <div class="swiper-slide">
+                    <EventCard
                             link="https://docs.google.com/forms/d/e/1FAIpQLSd1JHpcvM8emnwUGRIKsG-ZxJMB_E_EkpiP54G0P3eP_K0meQ/viewform"
                             image={terre} date="Vendredi 23 Mai"
                             name="Rencontre Green Skills #13 Les Alchimistes Provence"
@@ -222,7 +223,7 @@ const events = eventsSnapshot.docs.map((doc) => ({
                     <EventCard
                             link="https://docs.google.com/forms/d/e/1FAIpQLSfY7esUK2-bYqviqID8UvHuayLanCOAmrJmdR_a1xsXY1T4kg/viewform"
                             image={eventSolaire} date="Mercredi 28 Mai"
-                            name="Focus Métier #7 Ecole GUSTAVE"
+                            name="Focus Métier #8 Ecole GUSTAVE"
                             place="14 Rue Georges Picot, 13010 Marseille"
                             description="Explore les métiers du bâtiment et de l'artisanat et découvre les formations CVC, Plomberie, Electricité, ..."
                             delay="300"/>
@@ -248,7 +249,7 @@ const events = eventsSnapshot.docs.map((doc) => ({
                 <!--</div>-->
                 <div class="swiper-slide">
                     <EventCard
-                            link=" https://forms.gle/1FfsekTiNkA1ZmCw9"
+                            link="https://docs.google.com/forms/d/e/1FAIpQLScuK4V123a8HpfX2WB5q2ZZBcW7FWi3Ljz4jUnhBTFCp42L3Q/viewform"
                             image={lemonTri} date="Mardi 3 juin"
                             name="Rencontre Green Skills #15 - Lemon tri"
                             place="48 boulevard Capitaine Gèze, 13014 Marseille"
