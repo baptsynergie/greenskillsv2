@@ -39,6 +39,8 @@ import BlocProgram from '../components/BlocProgram.astro';
 import bag from '../images/pictos/bag.svg'
 import flash from '../images/pictos/flash.svg'
 
+import weekTheme from '../images/green-skills-semaine-thematique-photovoltaique-octobre-2024-17 (1) (4).jpg';
+
 
 const list1 = [
     '<span class=" font-finalSixExtraBold">Secteur de l’énergie verte :</span> nouveaux systèmes industriels et énergies renouvelables (éolien en mer, hydrogène vert, photovoltaïque, biogaz & biomasse...)',
@@ -162,106 +164,142 @@ const events = eventsSnapshot.docs.map((doc) => ({
 
     <StepForm/>
 
-    <!--container lg:flex lg:items-center lg:gap-20 space-y-8 lg:space-y-0 pb-[var(&#45;&#45;blocks-gap)]-->
-    <section id="event" class="margin-block container relative">
-        <div class="cursor-pointer btn-next absolute right-0 top-[50%] bottom-[50%] translate-x-[100%]">
-            <svg class="btn-navigation-slider hover:text-white hover:bg-green p-2 border-[2px] border-green rounded-full"
-                 width="50px" height="50px" stroke-width="2" viewBox="0 0 24 24" fill="none"
-                 xmlns="http://www.w3.org/2000/svg" color="#00bf63">
-                <path d="M9 6L15 12L9 18" stroke="#00bf63" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"></path>
-            </svg>
-        </div>
-        <div class="cursor-pointer btn-prev rotate-180 absolute left-0 top-[50%] bottom-[50%] translate-x-[-100%]">
-            <svg class="btn-navigation-slider hover:text-white hover:bg-green p-2 border-[2px] border-green rounded-full"
-                 width="50px" height="50px" stroke-width="2" viewBox="0 0 24 24" fill="none"
-                 xmlns="http://www.w3.org/2000/svg" color="#00bf63">
-                <path d="M9 6L15 12L9 18" stroke="#00bf63" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"></path>
-            </svg>
-        </div>
-        <h2 class="text-center text-black text-3xl font-finalSixBlack">Nos événements</h2>
-        <div class="swiper">
-            <div class="swiper-wrapper pt-[var(--blocks-gap-demi)] pb-[var(--blocks-gap)] pr-5">
-                <div class="swiper-slide">
-                    <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSd1zhkvGrrf06hyo_cUDhEYW7lYzfEPG_M42AXwtF_39lKjsA/viewform"
-                            image={accompagnement} date="jeudi 22 et mardi 27 mai"
-                            name="Ateliers d'accompagnement"
-                            place="6 Rue Berthelot, 13014 Marseille"
-                            description="Ces ateliers vous offrent des outils pratiques pour réussir dans votre recherche d'emploi comme réussir sa reconversion professionnelle, ou réaliser son CV classique et motivationnel."
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLScDih-fwN0iWeJC4YtQXyaNlc75vrJERybemwvTb7TEXVEhow/viewform"
-                            image={solive} date="Mercredi 21 mai"
-                            name="Focus métier # 7 - Centre de formation La solive"
-                            place="6 rue Joseph BAGGIA 13003 MARSEILLE"
-                            description="Visite des locaux de la Solive, et présentation des formations d'avenir dans la transition écologique et la rénovation du bâtiment."
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSd1JHpcvM8emnwUGRIKsG-ZxJMB_E_EkpiP54G0P3eP_K0meQ/viewform"
-                            image={terre} date="Vendredi 23 Mai"
-                            name="Rencontre Green Skills #13 Les Alchimistes Provence"
-                            place="6 Rue Berthelot, 13014 Marseille"
-                            description="Visite l'entreprise sur la collecte & le compostage de Biodéchets et découvre les opportunités dans le secteur."
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSdyWQ9mtFYQRZAbjUHomfHatqckgNUAWYloVdCFdyMvxqbHrQ/viewform"
-                            image={ordi} date="Mardi 27 mai"
-                            name="Rencontre Green Skills #14 - Provence TLC"
-                            place="2 rue de Vienne - 13127 Vitrolles"
-                            description="Provence TLC est une entreprise d'insertion basée au cœur de la Provence. Elle collecte, trie et revalorise les textiles. Viens visiter leur atelier !"
-                            delay="300"/>
-                </div>
-                <div class="swiper-slide">
-                    <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLSfY7esUK2-bYqviqID8UvHuayLanCOAmrJmdR_a1xsXY1T4kg/viewform"
-                            image={eventSolaire} date="Mercredi 28 Mai"
-                            name="Focus Métier #8 Ecole GUSTAVE"
-                            place="14 Rue Georges Picot, 13010 Marseille"
-                            description="Explore les métiers du bâtiment et de l'artisanat et découvre les formations CVC, Plomberie, Electricité, ..."
-                            delay="300"/>
-                </div>
+    <section id="needs" class="py-[var(--blocks-gap)] text-center lg:text-left">
+        <div class="container">
+            <h2 class=" text-black text-3xl font-finalSixBlack mb-[var(--blocks-gap-demi)]">Viens vivre l’expérience
+                Green Skills !</h2>
 
-                <!--<div class="swiper-slide">-->
-                <!--    <EventCard-->
-                <!--            link="https://docs.google.com/forms/d/e/1FAIpQLSe4HVdsUUbkItzjfeiFSyuebjNvwr7hGSMnFcbVUBRQV6j8Gw/viewform"-->
-                <!--            image={smartphone} date="Vendredi 23 Mai"-->
-                <!--            name="Ateliers BOULANGER - Réparation des téléphones smartphones"-->
-                <!--            place="6 Rue Berthelot, 13014 Marseille"-->
-                <!--            description="En collaboration avec l'entreprise Boulanger, viens participer à notre atelier sur la réparation des téléphones mobiles à l'Epopée."-->
-                <!--            delay="300"/>-->
-                <!--</div>-->
-                <!--<div class="swiper-slide">-->
-                <!--    <EventCard-->
-                <!--            link="https://docs.google.com/forms/d/e/1FAIpQLSe4HVdsUUbkItzjfeiFSyuebjNvwr7hGSMnFcbVUBRQV6j8Gw/viewform"-->
-                <!--            image={smartphone} date="Jeudi 29 mai"-->
-                <!--            name="Ateliers BOULANGER - Réparation d’ordinateurs"-->
-                <!--            place="6 Rue Berthelot, 13014 Marseille"-->
-                <!--            description="En collaboration avec l'entreprise Boulanger, viens participer à notre atelier sur la réparation des ordinateurs à l'Epopée."-->
-                <!--            delay="300"/>-->
-                <!--</div>-->
-                <div class="swiper-slide">
-                    <EventCard
-                            link="https://docs.google.com/forms/d/e/1FAIpQLScuK4V123a8HpfX2WB5q2ZZBcW7FWi3Ljz4jUnhBTFCp42L3Q/viewform"
-                            image={lemonTri} date="Mardi 3 juin"
-                            name="Rencontre Green Skills #15 - Lemon tri"
-                            place="48 boulevard Capitaine Gèze, 13014 Marseille"
-                            description="Visite du centre de tri de Lemon Tri. Cette entreprise s'engage contre l'incinération et l'enfouissement des déchets en proposant des solutions innovantes de tri, de recyclage et de réemploi."
-                            delay="300"/>
+            <div class="lg:flex gap-10">
+                <div class="content space-y-6 mt-6 lg:mt-0 flex-[2.5_2.5_0%]">
+                    <p class="font-finalSixBook text-left">Tu veux découvrir les métiers de la transition écologique
+                        autrement ?
+                        👉 Participe à nos visites d’entreprises, ateliers et rencontres inspirantes chaque mois dans les
+                        Bouches-du-Rhône.</p>
+                    <p class="text-left"><span class="font-finalSixBold block">Au programme :</span> <br>
+                        🔹 <span class="font-finalSixBold">Visites d’entreprises</span> engagées dans le recyclage, le tri, l’énergie verte, la rénovation
+                        durable, ... <br>
+                        🔹 <span class="font-finalSixBold">Focus Métiers</span> avec des pros et des centres de formation pour explorer les parcours concrets
+                        qui mènent à ces emplois d’avenir <br>
+                        🔹 <span class="font-finalSixBold">Ateliers d'accompagnement</span> : réussir sa reconversion, booster son CV, travailler sa posture
+                        professionnelle, ... <br>
+                        🔹 <span class="font-finalSixBold">Rencontres & forums emploi</span> pour échanger avec des pros, découvrir des opportunités et se
+                        projeter
+                    </p>
+                    <p class="font-finalSixBold text-left">C’est gratuit, ouvert à tous, et chaque mois on t’embarque
+                        dans une nouvelle aventure. C’est l’occasion de tester, explorer et t’orienter vers un métier
+                        d’avenir !</p>
+
+                    <a class="lg:w-fit rounded-lg w-full block my-4 px-8 py-4 font-finalSixBlack text-white lg:text-lg bg-green text-center border-solid border-[2px] border-green hover:bg-white hover:text-green transition-all" href="https://www.eventbrite.fr/o/synergie-family-111243796521">Notre programmation</a>
                 </div>
-
-
+                <div class="flex-1 mt-8 lg:mt-0">
+                    <Image src={weekTheme} alt="recruteurs greenskills"
+                           class="drop-shadow-lg h-full w-full object-cover object-center rounded-xl"/>
+                </div>
             </div>
-            <div class="swiper-pagination !bottom-[5%]"></div>
         </div>
     </section>
+
+    <!--container lg:flex lg:items-center lg:gap-20 space-y-8 lg:space-y-0 pb-[var(&#45;&#45;blocks-gap)]-->
+    <!--<section id="event" class="margin-block container relative">-->
+    <!--    <div class="cursor-pointer btn-next absolute right-0 top-[50%] bottom-[50%] translate-x-[100%]">-->
+    <!--        <svg class="btn-navigation-slider hover:text-white hover:bg-green p-2 border-[2px] border-green rounded-full"-->
+    <!--             width="50px" height="50px" stroke-width="2" viewBox="0 0 24 24" fill="none"-->
+    <!--             xmlns="http://www.w3.org/2000/svg" color="#00bf63">-->
+    <!--            <path d="M9 6L15 12L9 18" stroke="#00bf63" stroke-width="2" stroke-linecap="round"-->
+    <!--                  stroke-linejoin="round"></path>-->
+    <!--        </svg>-->
+    <!--    </div>-->
+    <!--    <div class="cursor-pointer btn-prev rotate-180 absolute left-0 top-[50%] bottom-[50%] translate-x-[-100%]">-->
+    <!--        <svg class="btn-navigation-slider hover:text-white hover:bg-green p-2 border-[2px] border-green rounded-full"-->
+    <!--             width="50px" height="50px" stroke-width="2" viewBox="0 0 24 24" fill="none"-->
+    <!--             xmlns="http://www.w3.org/2000/svg" color="#00bf63">-->
+    <!--            <path d="M9 6L15 12L9 18" stroke="#00bf63" stroke-width="2" stroke-linecap="round"-->
+    <!--                  stroke-linejoin="round"></path>-->
+    <!--        </svg>-->
+    <!--    </div>-->
+    <!--    <h2 class="text-center text-black text-3xl font-finalSixBlack">Nos événements</h2>-->
+    <!--    <div class="swiper">-->
+    <!--        <div class="swiper-wrapper pt-[var(&#45;&#45;blocks-gap-demi)] pb-[var(&#45;&#45;blocks-gap)] pr-5">-->
+    <!--            <div class="swiper-slide">-->
+    <!--                <EventCard-->
+    <!--                        link="https://docs.google.com/forms/d/e/1FAIpQLSd1zhkvGrrf06hyo_cUDhEYW7lYzfEPG_M42AXwtF_39lKjsA/viewform"-->
+    <!--                        image={accompagnement} date="jeudi 22 et mardi 27 mai"-->
+    <!--                        name="Ateliers d'accompagnement"-->
+    <!--                        place="6 Rue Berthelot, 13014 Marseille"-->
+    <!--                        description="Ces ateliers vous offrent des outils pratiques pour réussir dans votre recherche d'emploi comme réussir sa reconversion professionnelle, ou réaliser son CV classique et motivationnel."-->
+    <!--                        delay="300"/>-->
+    <!--            </div>-->
+    <!--            <div class="swiper-slide">-->
+    <!--                <EventCard-->
+    <!--                        link="https://docs.google.com/forms/d/e/1FAIpQLScDih-fwN0iWeJC4YtQXyaNlc75vrJERybemwvTb7TEXVEhow/viewform"-->
+    <!--                        image={solive} date="Mercredi 21 mai"-->
+    <!--                        name="Focus métier # 7 - Centre de formation La solive"-->
+    <!--                        place="6 rue Joseph BAGGIA 13003 MARSEILLE"-->
+    <!--                        description="Visite des locaux de la Solive, et présentation des formations d'avenir dans la transition écologique et la rénovation du bâtiment."-->
+    <!--                        delay="300"/>-->
+    <!--            </div>-->
+    <!--            <div class="swiper-slide">-->
+    <!--                <EventCard-->
+    <!--                        link="https://docs.google.com/forms/d/e/1FAIpQLSd1JHpcvM8emnwUGRIKsG-ZxJMB_E_EkpiP54G0P3eP_K0meQ/viewform"-->
+    <!--                        image={terre} date="Vendredi 23 Mai"-->
+    <!--                        name="Rencontre Green Skills #13 Les Alchimistes Provence"-->
+    <!--                        place="6 Rue Berthelot, 13014 Marseille"-->
+    <!--                        description="Visite l'entreprise sur la collecte & le compostage de Biodéchets et découvre les opportunités dans le secteur."-->
+    <!--                        delay="300"/>-->
+    <!--            </div>-->
+    <!--            <div class="swiper-slide">-->
+    <!--                <EventCard-->
+    <!--                        link="https://docs.google.com/forms/d/e/1FAIpQLSdyWQ9mtFYQRZAbjUHomfHatqckgNUAWYloVdCFdyMvxqbHrQ/viewform"-->
+    <!--                        image={ordi} date="Mardi 27 mai"-->
+    <!--                        name="Rencontre Green Skills #14 - Provence TLC"-->
+    <!--                        place="2 rue de Vienne - 13127 Vitrolles"-->
+    <!--                        description="Provence TLC est une entreprise d'insertion basée au cœur de la Provence. Elle collecte, trie et revalorise les textiles. Viens visiter leur atelier !"-->
+    <!--                        delay="300"/>-->
+    <!--            </div>-->
+    <!--            <div class="swiper-slide">-->
+    <!--                <EventCard-->
+    <!--                        link="https://docs.google.com/forms/d/e/1FAIpQLSfY7esUK2-bYqviqID8UvHuayLanCOAmrJmdR_a1xsXY1T4kg/viewform"-->
+    <!--                        image={eventSolaire} date="Mercredi 28 Mai"-->
+    <!--                        name="Focus Métier #8 Ecole GUSTAVE"-->
+    <!--                        place="14 Rue Georges Picot, 13010 Marseille"-->
+    <!--                        description="Explore les métiers du bâtiment et de l'artisanat et découvre les formations CVC, Plomberie, Electricité, ..."-->
+    <!--                        delay="300"/>-->
+    <!--            </div>-->
+
+    <!--            &lt;!&ndash;<div class="swiper-slide">&ndash;&gt;-->
+    <!--            &lt;!&ndash;    <EventCard&ndash;&gt;-->
+    <!--            &lt;!&ndash;            link="https://docs.google.com/forms/d/e/1FAIpQLSe4HVdsUUbkItzjfeiFSyuebjNvwr7hGSMnFcbVUBRQV6j8Gw/viewform"&ndash;&gt;-->
+    <!--            &lt;!&ndash;            image={smartphone} date="Vendredi 23 Mai"&ndash;&gt;-->
+    <!--            &lt;!&ndash;            name="Ateliers BOULANGER - Réparation des téléphones smartphones"&ndash;&gt;-->
+    <!--            &lt;!&ndash;            place="6 Rue Berthelot, 13014 Marseille"&ndash;&gt;-->
+    <!--            &lt;!&ndash;            description="En collaboration avec l'entreprise Boulanger, viens participer à notre atelier sur la réparation des téléphones mobiles à l'Epopée."&ndash;&gt;-->
+    <!--            &lt;!&ndash;            delay="300"/>&ndash;&gt;-->
+    <!--            &lt;!&ndash;</div>&ndash;&gt;-->
+    <!--            &lt;!&ndash;<div class="swiper-slide">&ndash;&gt;-->
+    <!--            &lt;!&ndash;    <EventCard&ndash;&gt;-->
+    <!--            &lt;!&ndash;            link="https://docs.google.com/forms/d/e/1FAIpQLSe4HVdsUUbkItzjfeiFSyuebjNvwr7hGSMnFcbVUBRQV6j8Gw/viewform"&ndash;&gt;-->
+    <!--            &lt;!&ndash;            image={smartphone} date="Jeudi 29 mai"&ndash;&gt;-->
+    <!--            &lt;!&ndash;            name="Ateliers BOULANGER - Réparation d’ordinateurs"&ndash;&gt;-->
+    <!--            &lt;!&ndash;            place="6 Rue Berthelot, 13014 Marseille"&ndash;&gt;-->
+    <!--            &lt;!&ndash;            description="En collaboration avec l'entreprise Boulanger, viens participer à notre atelier sur la réparation des ordinateurs à l'Epopée."&ndash;&gt;-->
+    <!--            &lt;!&ndash;            delay="300"/>&ndash;&gt;-->
+    <!--            &lt;!&ndash;</div>&ndash;&gt;-->
+    <!--            <div class="swiper-slide">-->
+    <!--                <EventCard-->
+    <!--                        link="https://docs.google.com/forms/d/e/1FAIpQLScuK4V123a8HpfX2WB5q2ZZBcW7FWi3Ljz4jUnhBTFCp42L3Q/viewform"-->
+    <!--                        image={lemonTri} date="Mardi 3 juin"-->
+    <!--                        name="Rencontre Green Skills #15 - Lemon tri"-->
+    <!--                        place="48 boulevard Capitaine Gèze, 13014 Marseille"-->
+    <!--                        description="Visite du centre de tri de Lemon Tri. Cette entreprise s'engage contre l'incinération et l'enfouissement des déchets en proposant des solutions innovantes de tri, de recyclage et de réemploi."-->
+    <!--                        delay="300"/>-->
+    <!--            </div>-->
+
+
+    <!--        </div>-->
+    <!--        <div class="swiper-pagination !bottom-[5%]"></div>-->
+    <!--    </div>-->
+    <!--</section>-->
+
 
     <Band pdf={pdf} title="Envie d\'en savoir plus ?" btnText='Télécharger la plaquette' bgImage={band}/>
 
