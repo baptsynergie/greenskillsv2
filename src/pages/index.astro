@@ -124,57 +124,15 @@ const events = eventsSnapshot.docs.map((doc) => ({
 
     <section id="needs" class="py-[var(--blocks-gap)] text-center lg:text-left">
         <div class="container">
-            <h2 class=" text-black text-3xl font-finalSixBlack mb-[var(--blocks-gap-demi)]">Besoin d'un emploi ou envie
-                de recruter ?</h2>
+            <h2 class=" text-black text-3xl font-finalSixBlack mb-[var(--blocks-gap-demi)] text-green">Les événements Green Skills</h2>
 
-            <div class="lg:flex gap-10">
-                <div class="flex-1">
-                    <Image src={event11} alt="recruteurs greenskills"
-                           class="drop-shadow-lg h-full w-full object-cover object-center rounded-xl"/>
-                </div>
-                <div class="content space-y-6 mt-6 lg:mt-0 flex-[2.5_2.5_0%]">
-                    <p class="font-finalSixBook text-left">👉 Demandeurs d’emploi : Contactez l’un de nos révélateurs de
-                        talents pour
-                        vous accompagner dans votre recherche et découvrir des opportunités dans les métiers verts en
-                        pleine croissance.</p>
-                    <p class="font-finalSixBook text-left">👉 Entreprises : Si vous souhaitez vous engager dans la
-                        transition écologique
-                        et recruter des talents, contactez Julien pour construire ensemble des solutions adaptées à vos
-                        besoins.</p>
-                    <p class="font-finalSixBold text-left">Nous sommes là pour connecter les talents et les entreprises
-                        au service d’un avenir durable !</p>
-
-                    <hr class="border-green">
-
-                    <div>
-                        <p class="mb-6 text-left font-finalSixBold">📨 Contactez-nous dès maintenant !</p>
-                        <p class="mb-2 text-left font-finalSixBook"><span
-                                class="font-finalSixBold">Contact talent</span> : Sarhaline - <a
-                                class="underline text-green" href="tel:0625604375">0625604375</a> / Ledhia - <a
-                                class="underline text-green" href="tel:0769164228">0769164228</a></p>
-                        <p class="text-left font-finalSixBook"><span class="font-finalSixBold">Contact entreprise</span>
-                            : Julien - <a class="underline text-green" href="tel:0776119949">0776119949</a> / Mélanie -
-                            <a class="underline text-green" href="tel:0777382360">0777382360</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <StepForm/>
-
-    <section id="needs" class="py-[var(--blocks-gap)] text-center lg:text-left">
-        <div class="container">
-            <h2 class=" text-black text-3xl font-finalSixBlack mb-[var(--blocks-gap-demi)]">Viens vivre l’expérience
-                Green Skills !</h2>
+            <h3 class="text-black text-xl font-finalSixBlack mb-[var(--blocks-gap-demi)]">Viens vivre l’expérience Green Skills ! </h3>
 
             <div class="lg:flex gap-10">
                 <div class="content space-y-6 mt-6 lg:mt-0 flex-[2.5_2.5_0%]">
                     <p class="font-finalSixBook text-left">Tu veux découvrir les métiers de la transition écologique
                         autrement ?
-                        👉 Participe à nos visites d’entreprises, ateliers et rencontres inspirantes chaque mois dans les
-                        Bouches-du-Rhône.</p>
+                        👉 Participe à nos événements chaque mois dans les Bouches-du-Rhône</p>
                     <p class="text-left"><span class="font-finalSixBold block">Au programme :</span> <br>
                         🔹 <span class="font-finalSixBold">Visites d’entreprises</span> engagées dans le recyclage, le tri, l’énergie verte, la rénovation
                         durable, ... <br>
@@ -198,6 +156,50 @@ const events = eventsSnapshot.docs.map((doc) => ({
             </div>
         </div>
     </section>
+
+    <StepForm/>
+
+    <section id="needs" class="py-[var(--blocks-gap)] text-center lg:text-left">
+        <div class="container">
+            <h2 class=" text-black text-3xl font-finalSixBlack mb-[var(--blocks-gap-demi)] text-green">Rencontrez-nous</h2>
+
+            <h3 class="text-black text-xl font-finalSixBlack mb-[var(--blocks-gap-demi)]">Besoin d'un emploi ou envie de recruter ?</h3>
+
+            <div class="lg:flex gap-10">
+                <div class="flex-1">
+                    <Image src={event11} alt="recruteurs greenskills"
+                           class="drop-shadow-lg h-full w-full object-cover object-center rounded-xl"/>
+                </div>
+                <div class="content space-y-6 mt-6 lg:mt-0 flex-[2.5_2.5_0%]">
+                    <p class="font-finalSixBook text-left">👉 Demandeurs d’emploi : Contactez l’un de nos révélateurs de
+                        talents pour
+                        vous accompagner dans votre recherche et découvrir des opportunités dans les métiers verts en
+                        pleine croissance.</p>
+                    <p class="font-finalSixBook text-left">👉 Entreprises : Si vous souhaitez vous engager dans la
+                        transition écologique
+                        et recruter des talents, contactez-nous pour construire ensemble des solutions adaptées à vos
+                        besoins.</p>
+                    <p class="font-finalSixBold text-left">Nous sommes là pour connecter les talents et les entreprises
+                        au service d’un avenir durable !</p>
+
+                    <hr class="border-green">
+
+                    <div>
+                        <p class="mb-6 text-left font-finalSixBold">📨 Contactez-nous dès maintenant !</p>
+                        <p class="mb-2 text-left font-finalSixBook"><span
+                                class="font-finalSixBold">Contact talent</span> : Sarhaline - <a
+                                class="underline text-green" href="tel:0625604375">0625604375</a> / Ledhia - <a
+                                class="underline text-green" href="tel:0769164228">0769164228</a></p>
+                        <p class="text-left font-finalSixBook"><span class="font-finalSixBold">Contact entreprise</span>
+                            : Julien - <a class="underline text-green" href="tel:0776119949">0776119949</a> / Mélanie -
+                            <a class="underline text-green" href="tel:0777382360">0777382360</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!--container lg:flex lg:items-center lg:gap-20 space-y-8 lg:space-y-0 pb-[var(&#45;&#45;blocks-gap)]-->
     <!--<section id="event" class="margin-block container relative">-->
